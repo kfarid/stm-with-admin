@@ -72,7 +72,7 @@
 <script src="https://cdn.tiny.cloud/1/b10azbt9a5j5j6xgav88ywdr129t74d1ddw75vnxfpwb00l2/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
 <script type="text/javascript" src="{{asset('dist/js/jquery.colorbox-min.js')}}"></script>
-<script src="{{asset('admin/admin.js')}}"></script>
+<script src="{{asset('dist/js/admin.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->

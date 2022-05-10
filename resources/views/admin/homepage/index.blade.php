@@ -45,40 +45,40 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-@foreach($homep as $home)
-                                    <tr>
-                                        <td>
-                                            {{$home->id}}
-                                        </td>
-                                        <td>
-                                            {{$home->title}}
-                                        </td>
-                                        <td class="project-actions text-right">
-                                            @if(auth()->user()->can('edit'))
-                                                <a class="btn btn-info btn-sm"
-                                                   href="{{route('homepage.edit',$home['id']) }}">
-                                                    <i class="fas fa-pencil-alt">
-                                                    </i>
-                                                    Edit
-                                                </a>
-                                            @endif
-                                            @if(auth()->user()->can('delete'))
-                                                <form action="{{route('homepage.destroy',$home['id'] )}}"
-                                                      method="POST"
-                                                      style="display:inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm delete-btn">
-                                                        <i class="fas fa-trash">
+                                    @foreach($homePage as $home)
+                                        <tr>
+                                            <td>
+                                                {{$home->id}}
+                                            </td>
+                                            <td>
+                                                {{$home->title}}
+                                            </td>
+                                            <td class="project-actions text-right">
+                                                @if(auth()->user()->can('edit'))
+                                                    <a class="btn btn-info btn-sm"
+                                                       href="{{route('homepage.edit',$home->id)}}">
+                                                        <i class="fas fa-pencil-alt">
                                                         </i>
-                                                        Delete
-                                                    </button>
-                                                </form>
-                                            @endif
-                                        </td>
-                                    </tr>
+                                                        Edit
+                                                    </a>
+                                                @endif
+                                                @if(auth()->user()->can('delete'))
+                                                    <form action="{{route('homepage.destroy',$home->id )}}"
+                                                          method="POST"
+                                                          style="display:inline-block;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm delete-btn">
+                                                            <i class="fas fa-trash">
+                                                            </i>
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                @endif
+                                            </td>
+                                        </tr>
 
-@endforeach
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -29,26 +29,26 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card card-primary">
-                            <form action="{{route('homepage.update',$homep['id'])}}" method="POST">
+                            <form action="{{to_route('homepage.update',$homePage['id'])}}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group col-sm-12">
                                         <label for="exampleInputEmail1">Title</label>
-                                        <input type="text" name="title" class="form-control" id="exampleInputEmail1"
+                                        <input type="text" value="{{$homePage['title']}}" name="title" class="form-control" id="exampleInputEmail1"
                                                placeholder="Enter category name" required>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="exampleInputEmail1">Title</label>
-                                        <input type="number" name="sec_id" class="form-control" id="exampleInputEmail1"
+                                        <input type="number" value="{{ $homePage['sec_id'] }}" name="sec_id" class="form-control" id="exampleInputEmail1"
                                                placeholder="..." required>
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <div class="form-group">
                                         <label for="feature_image">Изображение статьи</label>
-                                        <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
-                                        <input type="text" name="img" class="form-control" id="feature_image"
+                                        <img src="{{ $homePage['img'] }}" alt="" class="img-uploaded" style="display: block; width: 300px">
+                                        <input type="text" value="{{ $homePage['img'] }}" name="img" class="form-control" id="feature_image"
                                                name="feature_image" value="" readonly>
                                         <button href="" class="popup_selector btn btn-primary m-2" data-inputid="feature_image">Выбрать изображение</button>
                                     </div>

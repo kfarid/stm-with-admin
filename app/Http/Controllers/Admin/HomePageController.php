@@ -94,6 +94,7 @@ class HomePageController extends Controller
      */
     public function destroy(HomePage $homePage)
     {
+
         $homePage->delete();
         return redirect()->back()->withSuccess('Perfectly deleted');
     }

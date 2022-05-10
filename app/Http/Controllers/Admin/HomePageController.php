@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\HomePage;
 use Illuminate\Http\Request;
-use PhpParser\Node\Scalar\String_;
 
 class HomePageController extends Controller
 {
@@ -16,8 +15,8 @@ class HomePageController extends Controller
      */
     public function index()
     {
-        $homep = HomePage::orderBy('created_at', 'desc')->get();
-        return view('admin.homepage.index', compact('homep'));
+        $homePage = HomePage::orderBy('created_at', 'desc')->get();
+        return view('admin.homepage.index', compact('homePage'));
     }
 
     /**
@@ -33,16 +32,16 @@ class HomePageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $homep = new HomePage();
-        $homep->title = $request->title;
-        $homep->img = $request->img;
-        $homep->sec_id = $request->sec_id;
-        $homep->save();
+        $homePage = new HomePage();
+        $homePage->title = $request->title;
+        $homePage->img = $request->img;
+        $homePage->sec_id = $request->sec_id;
+        $homePage->save();
 
         return redirect()->back()->withSuccess('Perfectly added');
     }
@@ -50,10 +49,10 @@ class HomePageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  \App\Models\HomePage  $homePage
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(HomePage $homePage)
     {
         //
     }
@@ -61,29 +60,28 @@ class HomePageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  \App\Models\HomePage  $homePage
      * @return \Illuminate\Http\Response
      */
-    public function edit(HomePage $homep)
+    public function edit(HomePage $homePage)
     {
-
-        return view('admin.homepage.edit',compact('homep'));
+        return view('admin.homepage.edit',compact('homePage'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\HomePage  $homePage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HomePage $homep)
+    public function update(Request $request, HomePage $homePage)
     {
-        $homep->title = $request->title;
-        $homep->img = $request->img;
-        $homep->cat_id = $request->cat_id;
-        /*$homep->save();*/
-        $homep->update();
+        $homePage->title = $request->title;
+        $homePage->img = $request->img;
+        $homePage->sec_id = $request->sec_id;
+        /*$homePage->save();*/
+        $homePage->update();
 
         return redirect()->back()->withSuccess('Perfectly edited');
     }
@@ -91,12 +89,12 @@ class HomePageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param HomePage $homep
+     * @param  \App\Models\HomePage  $homePage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomePage $homep)
+    public function destroy(HomePage $homePage)
     {
-        $homep->delete();
+        $homePage->delete();
         return redirect()->back()->withSuccess('Perfectly deleted');
     }
 }

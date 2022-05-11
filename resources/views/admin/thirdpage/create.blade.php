@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Add Second Page</h1>
+                        <h1 class="m-0">Add Third Page</h1>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
                 @if (session('success'))
@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card card-primary">
-                            <form action="{{route('secondpage.store')}}" method="POST">
+                            <form action="{{route('thirdpage.store')}}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group col-sm-12">
@@ -53,13 +53,52 @@
                                                placeholder="Enter title tr name" required>
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label>Select Home Page</label>
-                                        <select name="home_id" class="form-control">
-                                            @foreach($homePage as $home)
-                                                <option value="{{$home['id']}}">{{$home['title_en']}}</option>
+                                        <label>Select Second Page</label>
+                                        <select name="second_id" class="form-control">
+                                            @foreach($secondPage as $second)
+                                                <option value="{{$second['id']}}">{{$second['title_en']}}</option>
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Select Panel</label>
+                                        @foreach($panels as $panel)
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" value="{{$panel->id}}"
+                                                       name="panels[]" class="form-check-input"
+                                                       id="exampleCheck{{$panel->id}}"
+                                                       placeholder="Enter role name">
+                                                <label class="form-check-label"
+                                                       for="exampleCheck{{$panel->id}}">{{$panel->name}}</label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Select Card</label>
+                                        @foreach($cards as $card)
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" value="{{$card->id}}"
+                                                       name="cards[]" class="form-check-input"
+                                                       id="exampleCheck{{$card->id}}"
+                                                       placeholder="Enter role name">
+                                                <label class="form-check-label"
+                                                       for="exampleCheck{{$card->id}}">{{$card->name}}</label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <textarea name="textarea_en" class="editor"> </textarea>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <textarea name="textarea_az" class="editor"> </textarea>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <textarea name="textarea_ru" class="editor"> </textarea>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <textarea name="textarea_tr" class="editor"> </textarea>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="feature_image">Select Image</label>
                                         <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">

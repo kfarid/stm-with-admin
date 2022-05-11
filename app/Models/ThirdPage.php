@@ -35,6 +35,22 @@ class ThirdPage extends Model
     ];
 
 
+    public function secondpage()
+    {
+        return $this->belongsTo('App\Models\SecondPage', 'second_id');
+    }
+
+    public function panel()
+    {
+        return $this->belongsTo('App\Models\Panel', 'panel_id');
+    }
+
+    public function card()
+    {
+        return $this->belongsTo('App\Models\Card', 'card_id');
+    }
+
+
     /**
      * Return the sluggable configuration array for this model.
      *

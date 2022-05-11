@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Home Page')
+@section('title','Second Page')
 
 @section('content')
     <div class="content-wrapper">
@@ -40,30 +40,36 @@
                                         <th style="width: 25%">
                                             Name
                                         </th>
+                                        <th style="width: 25%">
+                                            Parent Category
+                                        </th>
                                         <th style="width: 40%">
                                         </th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($homePage as $homes)
+                                    @foreach($secondPage as $second)
                                         <tr>
                                             <td>
-                                                {{$homes->id}}
+                                                {{$second->id}}
                                             </td>
                                             <td>
-                                                {{$homes->title_en}}
+                                                {{$second->title_en}}
+                                            </td>
+                                            <td>
+                                                {{$second->homepage['title_en']}}
                                             </td>
                                             <td class="project-actions text-right">
                                                 @if(auth()->user()->can('edit'))
                                                     <a class="btn btn-info btn-sm"
-                                                       href="{{route('homepage.edit',$homes['id'])}}">
+                                                       href="{{route('secondpage.edit',$second['id'])}}">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Edit
                                                     </a>
                                                 @endif
                                                 @if(auth()->user()->can('delete'))
-                                                    <form action="{{route('homepage.destroy',$homes->id)}}"
+                                                    <form action="{{route('secondpage.destroy',$second->id)}}"
                                                           method="post"
                                                           style="display:inline-block;">
                                                         @method('DELETE')

@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card card-primary">
-                            <form action="{{route('homepage.store')}}" method="POST">
+                            <form action="{{route('secondpage.store')}}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group col-sm-12">
@@ -52,8 +52,14 @@
                                         <input type="text" name="title_tr" class="form-control" id="exampleInputEmail1"
                                                placeholder="Enter title tr name" required>
                                     </div>
-                                </div>
-                                <div class="form-group col-sm-12">
+                                    <div class="form-group col-sm-6">
+                                        <label>Select Home Page</label>
+                                        <select name="home_id" class="form-control">
+                                            @foreach($homePage as $home)
+                                                <option value="{{$home['id']}}">{{$home['title_en']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     <div class="form-group">
                                         <label for="feature_image">Select Image</label>
                                         <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">

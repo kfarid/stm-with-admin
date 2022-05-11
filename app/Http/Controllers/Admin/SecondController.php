@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\HomePage;
+use App\Models\SecondPage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SecondController extends Controller
 {
@@ -14,7 +17,8 @@ class SecondController extends Controller
      */
     public function index()
     {
-        //
+        $secondPage = SecondPage::orderBy('created_at', 'desc')->get();
+        return view('admin.secondpage.index',compact('secondPage'));
     }
 
     /**
@@ -24,7 +28,8 @@ class SecondController extends Controller
      */
     public function create()
     {
-        //
+        $homePage = HomePage::orderBy('created_at', 'desc')->get();
+        return view('admin.secondpage.create',compact('homePage'));
     }
 
     /**
@@ -35,7 +40,16 @@ class SecondController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $secondPage = new SecondPage();
+        $secondPage->title_en = $request->title_en;
+        $secondPage->title_az = $request->title_az;
+        $secondPage->title_ru = $request->title_ru;
+        $secondPage->title_tr = $request->title_tr;
+        $secondPage->img = $request->img;
+        $secondPage->home_id = $request->home_id;
+        $secondPage->save();
+
+        return redirect()->route('secondpage.index')->withSuccess('Perfectly added');
     }
 
     /**
@@ -57,7 +71,12 @@ class SecondController extends Controller
      */
     public function edit($id)
     {
-        //
+        $homePage = HomePage::orderBy('created_at', 'desc')->get();
+        $second = SecondPage::find($id);
+        return view('admin.secondpage.edit',[
+            'homePage' => $homePage,
+            'second' => $second
+        ]);
     }
 
     /**
@@ -69,7 +88,16 @@ class SecondController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $secondPage =  SecondPage::find($id);
+        $secondPage->title_en = $request->title_en;
+        $secondPage->title_az = $request->title_az;
+        $secondPage->title_ru = $request->title_ru;
+        $secondPage->title_tr = $request->title_tr;
+        $secondPage->img = $request->img;
+        $secondPage->home_id = $request->home_id;
+        $secondPage->update();
+
+        return redirect()->route('secondpage.index')->withSuccess('Perfectly edited');
     }
 
     /**
@@ -80,6 +108,9 @@ class SecondController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('second_pages')
+            ->where('id', $id)
+            ->delete();
+        return redirect()->route('secondpage.index')->withSuccess('Perfectly deleted');
     }
 }

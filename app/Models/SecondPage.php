@@ -11,7 +11,27 @@ class SecondPage extends Model
 {
     use HasFactory, SoftDeletes, Sluggable;
 
+
+    protected $fillable = [
+        'title_en',
+        'title_az',
+        'title_ru',
+        'title_tr',
+        'img',
+        'sec_id',
+        'slug_en',
+        'slug_az',
+        'slug_ru',
+        'slug_tr',
+        'home_id'
+    ];
+
     protected $dates = ['deleted_at'];
+
+    public function homepage()
+    {
+        return $this->belongsTo('App\Models\HomePage', 'home_id');
+    }
 
 
       /**
@@ -22,8 +42,17 @@ class SecondPage extends Model
     public function sluggable(): array
     {
         return [
-            'slug' => [
-                'source' => 'title'
+            'slug_en' => [
+                'source' => 'title_en'
+            ],
+            'slug_az' => [
+                'source' => 'title_az'
+            ],
+            'slug_ru' => [
+                'source' => 'title_ru'
+            ],
+            'slug_tr' => [
+                'source' => 'title_tr'
             ]
         ];
     }

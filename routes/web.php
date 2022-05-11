@@ -25,6 +25,7 @@ Auth::routes();
 Route::middleware(['roles:admin'])->prefix('admin_panel')->group( function () {
     Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('homeAdmin');
     Route::resource('homepage', \App\Http\Controllers\Admin\HomePageController::class);
+    Route::resource('secondpage', \App\Http\Controllers\Admin\SecondController::class);
     /*Route::resource('contact', \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);*/
 });

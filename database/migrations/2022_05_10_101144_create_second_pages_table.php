@@ -15,10 +15,16 @@ return new class extends Migration
     {
         Schema::create('second_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug');
+            $table->string('title_en');
+            $table->string('title_az');
+            $table->string('title_ru');
+            $table->string('title_tr');
+            $table->string('slug_en');
+            $table->string('slug_az');
+            $table->string('slug_ru');
+            $table->string('slug_tr');
             $table->string('img');
-            $table->bigInteger('thi_id')->unsigned();
+            $table->bigInteger('home_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
         });

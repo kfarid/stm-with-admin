@@ -31,7 +31,7 @@ Route::middleware(['roles:admin'])->prefix('admin_panel')->group( function () {
     Route::resource('panel', \App\Http\Controllers\Admin\PanelController::class);
     Route::resource('card', \App\Http\Controllers\Admin\CardController::class);
     Route::resource('user', \App\Http\Controllers\Admin\UserController::class);
-    /*Route::resource('contact', \App\Http\Controllers\Admin\ContactController::class);*/
+    Route::resource('contact', \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
 });
 

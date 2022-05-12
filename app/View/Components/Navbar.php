@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Contact;
 use Illuminate\View\Component;
 
 class Navbar extends Component
@@ -23,6 +24,8 @@ class Navbar extends Component
      */
     public function render()
     {
-        return view('admin.components.navbar');
+        $mail_count = Contact::all()->count();
+        $contacts = Contact::orderBy('created_at','DESC')->get();
+        return view('admin.components.navbar',compact('mail_count','contacts'));
     }
 }

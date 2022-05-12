@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
+use App\Models\HomePage;
+use App\Models\SecondPage;
+use App\Models\ThirdPage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +18,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home.index');
+        $home_count = HomePage::all()->count();
+        $second_count = SecondPage::all()->count();
+        $third_count = ThirdPage::all()->count();
+        $mail_count = Contact::all()->count();
+        return view('admin.home.index',compact('home_count','second_count','third_count','mail_count'));
     }
 
     /**

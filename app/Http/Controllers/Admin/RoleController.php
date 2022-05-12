@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
@@ -14,7 +16,10 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Role::orderBy('name')->where('name','!=','admin')->get();
+        return view('admin.roles.index',[
+            'roles'=>$roles
+        ]);
     }
 
     /**
@@ -24,7 +29,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        $permissions = Permission::orderBy('name')->get();
+        return view('admin.roles.create',compact('permissions'));
     }
 
     /**
@@ -35,7 +41,18 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'permissions.*' => 'required|integer|exists:permissions,id',
+        ]);
+
+        $newRole = Role::create([
+            'name' => $request->name
+        ]);
+        $permissions = Permission::whereIn('id', $request->permissions)->get();
+        $newRole->syncPermissions($permissions);
+
+        return redirect()->route('roles.index')->with('status', 'Role added!');
     }
 
     /**
@@ -46,40 +63,55 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Role $role
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        //
+        $permissions = Permission::orderBy('name')->get();
+        return view('admin.roles.edit',compact('permissions','role'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param Role $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Role $role)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'permissions' => 'required',
+            'permissions.*' => 'required|integer|exists:permissions,id',
+        ]);
+
+        $role = Role::where('name', '!=', 'super-user')->findOrFail($role->id);
+        $role->update([
+            'name' => $request->name
+        ]);
+        $permissions = Permission::whereIn('id', $request->permissions)->get();
+        $role->syncPermissions($permissions);
+
+        return redirect()->back()->with('status', 'Role updated!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Role $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        //
+        $role -> delete();
+        return redirect()->back()->withSuccess('Post perfectly deleted');
     }
 }

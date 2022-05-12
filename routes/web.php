@@ -22,13 +22,17 @@ Route::get('home',function () {
 Auth::routes();
 
 
+
 Route::middleware(['roles:admin'])->prefix('admin_panel')->group( function () {
     Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('homeAdmin');
     Route::resource('homepage', \App\Http\Controllers\Admin\HomePageController::class);
     Route::resource('secondpage', \App\Http\Controllers\Admin\SecondController::class);
     Route::resource('thirdpage', \App\Http\Controllers\Admin\ThirdController::class);
-    /*Route::resource('contact', \App\Http\Controllers\Admin\ContactController::class);
-    Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);*/
+    Route::resource('panel', \App\Http\Controllers\Admin\PanelController::class);
+    Route::resource('card', \App\Http\Controllers\Admin\CardController::class);
+    Route::resource('user', \App\Http\Controllers\Admin\UserController::class);
+    /*Route::resource('contact', \App\Http\Controllers\Admin\ContactController::class);*/
+    Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
 });
 
 
@@ -41,3 +45,5 @@ Route::prefix('/')->group(function (){
     Route::get('/',[\App\Http\Controllers\Admin\PageController::class,'index'])->name('index');
     Route::get('show/{slug}',[\App\Http\Controllers\Admin\PageController::class,'show'])->name('show');
 });*/
+
+

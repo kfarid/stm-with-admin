@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-            $table->string('category');
+            $table->string('category')->nullable();
             $table->string('img');
             $table->string('title');
             $table->string('location');
             $table->bigInteger('phone');
-            $table->bigInteger('fax');
+            $table->bigInteger('fax')->nullable();
             $table->string('email');
-            $table->text('link');
+            $table->text('link')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

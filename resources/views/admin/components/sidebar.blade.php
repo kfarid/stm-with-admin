@@ -1,7 +1,8 @@
 <aside class="main-sidebar sidebar-light-info elevation-4">
     <!-- Brand Logo -->
     <a href="{{route('homeAdmin')}}" class="brand-link">
-        <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
         <span class="brand-text font-weight-light">Admin Panel</span>
     </a>
 
@@ -31,11 +32,11 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
                 <!-- Add icons to the links using the .nav-icon class
        with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open">
-                    <a href="{{route('homeAdmin')}}" class="nav-link active">
+                <li class="nav-item">
+                    <a href="{{route('homeAdmin')}}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -43,7 +44,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link cas">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Home Page
@@ -107,6 +108,98 @@
                             <a href="{{route('thirdpage.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Page</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-columns"></i>
+                        <p>
+                            Panel
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('panel.index')}}" class="nav-link">
+                                <i class="fas fa-eye nav-icon"></i>
+                                <p>All Panel</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('panel.create')}}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Add Panel</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>
+                            Cards
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('card.index')}}" class="nav-link">
+                                <i class="fas fa-eye nav-icon"></i>
+                                <p>All Cards</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('card.create')}}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Add Cards</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Users
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('user.index')}}" class="nav-link">
+                                <i class="fas fa-eye nav-icon"></i>
+                                <p>All Users</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('user.create')}}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Add Users</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user-lock"></i>
+                        <p>
+                            Permissions
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('roles.index')}}" class="nav-link">
+                                <i class="fas fa-eye nav-icon"></i>
+                                <p>All Permissions</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('roles.create')}}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Add Permissions</p>
                             </a>
                         </li>
                     </ul>

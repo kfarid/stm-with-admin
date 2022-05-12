@@ -28,9 +28,9 @@ return new class extends Migration
             $table->string('slug_ru');
             $table->string('slug_tr');
             $table->string('img');
-            $table->bigInteger('card_id')->unsigned();
+            $table->bigInteger('card_id')->nullable();
             $table->bigInteger('second_id')->unsigned();
-            $table->bigInteger('panel_id')->unsigned();
+            $table->bigInteger('panel_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

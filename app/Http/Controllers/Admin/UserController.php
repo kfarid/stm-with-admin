@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -14,7 +16,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::orderBy('created_at', 'desc')->get();
+        return view('admin.user.index', [
+            'users' => $users
+        ]);
     }
 
     /**
@@ -24,7 +29,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::orderBy('name')->get();
+        $users = User::orderBy('created_at', 'desc')->get();
+
+        return view('admin.user.create', [
+            'users' => $users,
+            'roles' => $roles
+        ]);
     }
 
     /**
@@ -35,16 +46,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $role = Role::find($request->role_id);
+
+        $user->syncRoles([$role->name]);
+        $user->save();
+
+        return redirect()->route('user.index')->withSuccess('User perfectly added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
         //
     }
@@ -52,34 +72,49 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $roles = Role::orderBy('name')->get();
+        return view('admin.user.edit', [
+            'user' => $user,
+            'roles' => $roles
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->assignRole('user');
+
+        $role = Role::find($request->role_id);
+
+        $user->syncRoles([$role->name]);
+        $user->update();
+
+        return redirect()->route('user.index')->withSuccess('User perfectly edited');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('user.index')->withSuccess('User perfectly deleted');
     }
 }

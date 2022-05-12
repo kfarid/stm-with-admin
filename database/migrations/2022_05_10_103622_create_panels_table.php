@@ -15,8 +15,14 @@ return new class extends Migration
     {
         Schema::create('panels', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('text');
+            $table->string('name_en');
+            $table->string('name_az');
+            $table->string('name_ru');
+            $table->string('name_tr');
+            $table->text('text_en');
+            $table->text('text_az');
+            $table->text('text_ru');
+            $table->text('text_tr');
             $table->softDeletes();
             $table->timestamps();
         });

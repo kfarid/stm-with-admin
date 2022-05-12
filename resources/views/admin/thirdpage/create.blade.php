@@ -87,15 +87,19 @@
                                         @endforeach
                                     </div>
                                     <div class="form-group col-sm-12">
+                                        <label>Text EN</label>
                                         <textarea name="textarea_en" class="editor"> </textarea>
                                     </div>
                                     <div class="form-group col-sm-12">
+                                        <label>Text AZ</label>
                                         <textarea name="textarea_az" class="editor"> </textarea>
                                     </div>
                                     <div class="form-group col-sm-12">
+                                        <label>Text RU</label>
                                         <textarea name="textarea_ru" class="editor"> </textarea>
                                     </div>
                                     <div class="form-group col-sm-12">
+                                        <label>Text TR</label>
                                         <textarea name="textarea_tr" class="editor"> </textarea>
                                     </div>
 

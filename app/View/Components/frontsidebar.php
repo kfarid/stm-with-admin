@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\HomePage;
 use Illuminate\View\Component;
 
 class frontsidebar extends Component
@@ -23,6 +24,7 @@ class frontsidebar extends Component
      */
     public function render()
     {
-        return view('front.components.frontsidebar');
+        $links = HomePage::orderBy('id')->get();
+        return view('front.components.frontsidebar',compact('links'));
     }
 }

@@ -1,18 +1,10 @@
 <nav class="sidenav nav-menu">
     <ul id="zone_8">
+        @foreach($links as $link)
         <li id="article_2">
-            <a title="STM TANIYIN" href=""><span>{{__('STM TANIYIN')}}</span></a>
+            <a title="{{$link->title_en}}" href="{{route('show',$link->id)}}"><span>{{$link->title_en}}</span></a>
         </li>
-        <li id="article_2">
-            <a title="YATIRIMCI &#304;L&#304;&#350;K&#304;LER&#304;" href=""><span>YATIRIMCI &#304;L&#304;&#350;K&#304;LER&#304;</span></a>
-        </li>
-        <li id="article_2">
-            <a title="SEKT&#214;RLER" href=""><span>{{__('SEKTORLER')}}</span></a>
-        </li>
-        <li id="article_2">
-            <a title="&#304;NSAN KAYNAKLARI"
-               href=""><span>&#304;NSAN KAYNAKLARI</span></a>
-        </li>
+        @endforeach
         <li id="article_2">
             <a title="KURUMSAL SORUMLULUK" href=""><span>KURUMSAL SORUMLULUK</span></a>
         </li>

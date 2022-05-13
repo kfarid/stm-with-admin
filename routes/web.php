@@ -37,13 +37,13 @@ Route::middleware(['roles:admin'])->prefix('admin_panel')->group( function () {
 
 
 /*Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contactForm'])->name('contact-form');
-Route::post('/contact', [App\Http\Controllers\ContactController::class, 'storeContactForm'])->name('contact-form.store');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'storeContactForm'])->name('contact-form.store');*/
 
 
 
 Route::prefix('/')->group(function (){
-    Route::get('/',[\App\Http\Controllers\Admin\PageController::class,'index'])->name('index');
-    Route::get('show/{slug}',[\App\Http\Controllers\Admin\PageController::class,'show'])->name('show');
-});*/
+    Route::get('/',[\App\Http\Controllers\FrontController::class,'index'])->name('index');
+    Route::get('show/{id}',[\App\Http\Controllers\FrontController::class,'show'])->name('show');
+});
 
 

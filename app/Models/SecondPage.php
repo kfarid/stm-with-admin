@@ -43,16 +43,16 @@ class SecondPage extends Model
     {
         return [
             'slug_en' => [
-                'source' => 'title_en'
+                'source' => 'title_en, id'
             ],
             'slug_az' => [
-                'source' => 'title_az'
+                'source' => 'title_az, id'
             ],
             'slug_ru' => [
-                'source' => 'title_ru'
+                'source' => 'title_ru, id'
             ],
             'slug_tr' => [
-                'source' => 'title_tr'
+                'source' => 'title_tr, id'
             ]
         ];
     }

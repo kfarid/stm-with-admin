@@ -51,13 +51,13 @@
                                     @foreach($thirdPage as $third)
                                         <tr>
                                             <td>
-                                                {{$second->id}}
+                                                {{$third->id}}
                                             </td>
                                             <td>
-                                                {{$second->title_en}}
+                                                {{$third->title_en}}
                                             </td>
                                             <td>
-                                                {{$second->secondpage['title_en']}}
+                                                {{$third->secondpage['title_en']}}
                                             </td>
                                             <td class="project-actions text-right">
                                                 @if(auth()->user()->can('edit'))

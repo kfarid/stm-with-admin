@@ -25,6 +25,11 @@ class HomePage extends Model
 
     protected $dates = ['deleted_at'];
 
+    public function home()
+    {
+        return $this->belongsTo('App\Models\HomePage', 'home_id');
+    }
+
     /**
      * Return the sluggable configuration array for this model.
      *

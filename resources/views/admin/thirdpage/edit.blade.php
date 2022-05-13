@@ -87,7 +87,7 @@
                                                        id="exampleCheck{{$card->id}}"
                                                        placeholder="Enter role name">
                                                 <label class="form-check-label"
-                                                       for="exampleCheck{{$card->id}}">{{$card->name}}</label>
+                                                       for="exampleCheck{{$card->id}}">{{$card->title}}</label>
                                             </div>
                                         @endforeach
                                     </div>

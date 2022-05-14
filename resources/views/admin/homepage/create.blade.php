@@ -57,8 +57,8 @@
                                     <div class="form-group">
                                         <label for="feature_image">Select Image</label>
                                         <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
-                                        <input type="text" name="img" class="form-control" id="feature_image"
-                                               name="feature_image" value="" readonly>
+                                        <input type="text" name="img feature_image" class="form-control img" id="feature_image"
+                                                value="" readonly>
                                         <button href="" class="popup_selector btn btn-primary m-2"
                                                 data-inputid="feature_image">Выбрать изображение
                                         </button>

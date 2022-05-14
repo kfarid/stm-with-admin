@@ -3,7 +3,7 @@
  *
  * @example
  * $('selector').elfinder({
- *   .... 
+ *   ....
  *   transport : new elFinderSupportVer1()
  * })
  *
@@ -16,14 +16,14 @@ window.elFinderSupportVer1 = function(upload) {
 		getDateString = function(date) {
 			return date.replace('Today', today).replace('Yesterday', yesterday);
 		};
-	
+
 	dateObj = new Date();
 	today = dateObj.getFullYear() + '/' + (dateObj.getMonth() + 1) + '/' + dateObj.getDate();
 	dateObj = new Date(Date.now() - 86400000);
 	yesterday = dateObj.getFullYear() + '/' + (dateObj.getMonth() + 1) + '/' + dateObj.getDate();
-	
+
 	this.upload = upload || 'auto';
-	
+
 	this.init = function(fm) {
 		this.fm = fm;
 		this.fm.parseUploadData = function(text) {
@@ -38,12 +38,12 @@ window.elFinderSupportVer1 = function(upload) {
 			} catch (e) {
 				return {error : ['errResponse', 'errDataNotJSON']};
 			}
-			
+
 			return self.normalize('upload', data);
 		};
 	};
-	
-	
+
+
 	this.send = function(opts) {
 		var self = this,
 			fm = this.fm,
@@ -53,14 +53,14 @@ window.elFinderSupportVer1 = function(upload) {
 			_opts = {},
 			data,
 			xhr;
-			
+
 		dfrd.abort = function() {
 			if (xhr.state() == 'pending') {
 				xhr.quiet = true;
 				xhr.abort();
 			}
 		};
-		
+
 		switch (cmd) {
 			case 'open':
 				opts.data.tree = 1;
@@ -103,7 +103,7 @@ window.elFinderSupportVer1 = function(upload) {
 						});
 				});
 				return dfrd.resolve({});
-				
+
 			case 'mkdir':
 			case 'mkfile':
 				opts.data.current = opts.data.target;
@@ -119,19 +119,19 @@ window.elFinderSupportVer1 = function(upload) {
 					});
 				}
 				break;
-				
+
 			case 'size':
 				return dfrd.resolve({error : fm.res('error', 'cmdsupport')});
 			case 'search':
 				return dfrd.resolve({error : fm.res('error', 'cmdsupport')});
-				
+
 			case 'file':
 				opts.data.cmd = 'open';
 				opts.data.current = fm.file(opts.data.target).phash;
 				break;
 		}
 		// cmd = opts.data.cmd
-		
+
 		xhr = $.ajax(opts)
 			.fail(function(error) {
 				dfrd.reject(error);
@@ -140,10 +140,10 @@ window.elFinderSupportVer1 = function(upload) {
 				data = self.normalize(cmd, raw);
 				dfrd.resolve(data);
 			});
-			
+
 		return dfrd;
 	};
-	
+
 	// fix old connectors errors messages as possible
 	// this.errors = {
 	// 	'Unknown command'                                  : 'Unknown command.',
@@ -159,11 +159,11 @@ window.elFinderSupportVer1 = function(upload) {
 	// 	'Unable to create archive'                         : 'Unable to create archive.',
 	// 	'Unable to extract files from archive'             : 'Unable to extract files from "$1".'
 	// }
-	
+
 	this.normalize = function(cmd, data) {
 		var self = this,
 			fm   = this.fm,
-			files = {}, 
+			files = {},
 			filter = function(file) { return file && file.hash && file.name && file.mime ? file : null; },
 			getDirs = function(items) {
 				return $.grep(items, function(i) {
@@ -196,7 +196,7 @@ window.elFinderSupportVer1 = function(upload) {
 		if ((cmd == 'tmb' || cmd == 'get')) {
 			return data;
 		}
-		
+
 		// if (data.error) {
 		// 	$.each(data.error, function(i, msg) {
 		// 		if (self.errors[msg]) {
@@ -204,33 +204,33 @@ window.elFinderSupportVer1 = function(upload) {
 		// 		}
 		// 	});
 		// }
-		
+
 		if (cmd == 'upload' && data.error && data.cwd) {
 			data.warning = Object.assign({}, data.error);
 			data.error = false;
 		}
-		
-		
+
+
 		if (data.error) {
 			return data;
 		}
-		
+
 		if (cmd == 'put') {
 
 			phash = fm.file(data.target.hash).phash;
 			return {changed : [this.normalizeFile(data.target, phash)]};
 		}
-		
+
 		phash = data.cwd.hash;
 
 		isCwd = (phash == fm.cwd().hash);
-		
+
 		if (data.tree) {
 			$.each(this.normalizeTree(data.tree), function(i, file) {
 				files[file.hash] = file;
 			});
 		}
-		
+
 		$.each(data.cdc||[], function(i, file) {
 			var hash = file.hash,
 				mcts;
@@ -249,7 +249,7 @@ window.elFinderSupportVer1 = function(upload) {
 				files[hash] = self.normalizeFile(file, phash, data.tmb);
 			}
 		});
-		
+
 		if (!data.tree) {
 			$.each(fm.files(), function(hash, file) {
 				if (!files[hash] && file.phash != phash && file.mime == 'directory') {
@@ -257,7 +257,7 @@ window.elFinderSupportVer1 = function(upload) {
 				}
 			});
 		}
-		
+
 		if (cmd == 'open') {
 			return {
 					cwd     : files[phash] || this.normalizeFile(data.cwd),
@@ -267,7 +267,7 @@ window.elFinderSupportVer1 = function(upload) {
 					debug   : data.debug
 				};
 		}
-		
+
 		if (isCwd) {
 			diff = fm.diff($.map(files, filter));
 		} else {
@@ -284,16 +284,16 @@ window.elFinderSupportVer1 = function(upload) {
 				}
 			}
 		}
-		
+
 		return Object.assign({
 			current : data.cwd.hash,
 			error   : data.error,
 			warning : data.warning,
 			options : {tmb : !!data.tmb}
 		}, diff);
-		
+
 	};
-	
+
 	/**
 	 * Convert old api tree into plain array of dirs
 	 *
@@ -305,7 +305,7 @@ window.elFinderSupportVer1 = function(upload) {
 			result   = [],
 			traverse = function(dirs, phash) {
 				var i, dir;
-				
+
 				for (i = 0; i < dirs.length; i++) {
 					dir = dirs[i];
 					result.push(self.normalizeFile(dir, phash));
@@ -317,7 +317,7 @@ window.elFinderSupportVer1 = function(upload) {
 
 		return result;
 	};
-	
+
 	/**
 	 * Convert file info from old api format into new one
 	 *
@@ -341,7 +341,7 @@ window.elFinderSupportVer1 = function(upload) {
 				write  : file.write,
 				locked : !phash ? true : file.rm === void(0) ? false : !file.rm
 			};
-		
+
 		if (! info.ts) {
 			if (mcts && !isNaN(mcts)) {
 				info.ts = Math.floor(mcts / 1000);
@@ -349,11 +349,11 @@ window.elFinderSupportVer1 = function(upload) {
 				info.date = file.date || this.fm.formatDate(file);
 			}
 		}
-		
+
 		if (file.mime == 'application/x-empty' || file.mime == 'inode/x-empty') {
 			info.mime = 'text/plain';
 		}
-		
+
 		if (file.linkTo) {
 			info.alias = file.linkTo;
 		}
@@ -361,12 +361,12 @@ window.elFinderSupportVer1 = function(upload) {
 		if (file.linkTo) {
 			info.linkTo = file.linkTo;
 		}
-		
+
 		if (file.tmb) {
 			info.tmb = file.tmb;
 		} else if (info.mime.indexOf('image/') === 0 && tmb) {
 			info.tmb = 1;
-			
+
 		}
 
 		if (file.dirs && file.dirs.length) {
@@ -380,7 +380,7 @@ window.elFinderSupportVer1 = function(upload) {
 		}
 		return info;
 	};
-	
+
 	this.normalizeOptions = function(data) {
 		var opts = {
 				path          : data.cwd.rel,
@@ -388,7 +388,7 @@ window.elFinderSupportVer1 = function(upload) {
 				tmb           : !!data.tmb,
 				copyOverwrite : true
 			};
-		
+
 		if (data.params) {
 			opts.api      = 1;
 			opts.url      = data.params.url;
@@ -397,7 +397,7 @@ window.elFinderSupportVer1 = function(upload) {
 				extract : data.params.extract || []
 			};
 		}
-		
+
 		if (opts.path.indexOf('/') !== -1) {
 			opts.separator = '/';
 		} else if (opts.path.indexOf('\\') !== -1) {

@@ -11,4 +11,22 @@ class Card extends Model
     use HasFactory,SoftDeletes;
 
     protected $dates = ['deleted_at'];
+
+
+    protected $fillable = [
+        'category',
+        'img',
+        'title',
+        'location',
+        'phone',
+        'fax',
+        'email',
+        'link',
+        'third_id'
+    ];
+
+    public function thirdpage()
+    {
+        return $this->belongsTo('App\Models\ThirdPage', 'third_id');
+    }
 }

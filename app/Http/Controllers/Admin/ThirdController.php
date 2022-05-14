@@ -54,9 +54,7 @@ class ThirdController extends Controller
         $thirdPage->textarea_ru = $request->textarea_ru;
         $thirdPage->textarea_tr = $request->textarea_tr;
         $thirdPage->img = $request->img;
-        $thirdPage->card_id = $request->card_id;
-        $thirdPage->second_id = $request->second_id;
-        $thirdPage->panel_id = $request->panel_id;
+        $thirdPage->second_slug = $request->second_slug;
 
         $thirdPage->save();
 
@@ -85,9 +83,13 @@ class ThirdController extends Controller
     {
         $seconds = SecondPage::orderBy('created_at', 'desc')->get();
         $third = ThirdPage::find($id);
+        $panels = Panel::orderBy('created_at', 'desc')->get();
+        $cards = Card::orderBy('created_at', 'desc')->get();
         return view('admin.thirdpage.edit',[
             'third' => $third,
-            'seconds' => $seconds
+            'seconds' => $seconds,
+            'panels'=>$panels,
+            'cards'=>$cards
         ]);
     }
 
@@ -110,9 +112,7 @@ class ThirdController extends Controller
         $thirdPage->textarea_ru = $request->textarea_ru;
         $thirdPage->textarea_tr = $request->textarea_tr;
         $thirdPage->img = $request->img;
-        $thirdPage->card_id = $request->card_id;
-        $thirdPage->second_id = $request->second_id;
-        $thirdPage->panel_id = $request->panel_id;
+        $thirdPage->second_slug = $request->second_slug;
 
         $thirdPage->update();
 

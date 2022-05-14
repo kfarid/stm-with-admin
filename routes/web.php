@@ -43,7 +43,8 @@ Route::post('/contact', [App\Http\Controllers\ContactController::class, 'storeCo
 
 Route::prefix('/')->group(function (){
     Route::get('/',[\App\Http\Controllers\FrontController::class,'index'])->name('index');
-    Route::get('show/{id}',[\App\Http\Controllers\FrontController::class,'show'])->name('show');
+    Route::get('second/{slug_en}',[\App\Http\Controllers\FrontController::class,'second'])->name('second');
+    Route::get('third/{slug_en}',[\App\Http\Controllers\FrontController::class,'third'])->name('third');
 });
 
 

@@ -7,9 +7,17 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <h1 class="m-0">All Panels </h1>
                     </div><!-- /.col -->
+                    <div class="col-sm-12">
+                        <a class="btn btn-dark btn-sm" role="button"
+                           href="{{route('panel.create')}}">
+                            <i class="fas fa-plus">
+                            </i>
+                            Add
+                        </a>
+                    </div>
                 </div><!-- /.row -->
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">

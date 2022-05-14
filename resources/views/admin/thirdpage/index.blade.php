@@ -10,6 +10,14 @@
                     <div class="col-sm-6">
                         <h1 class="m-0">All Post </h1>
                     </div><!-- /.col -->
+                    <div class="col-sm-12">
+                        <a class="btn btn-dark btn-sm" role="button"
+                           href="{{route('thirdpage.create')}}">
+                            <i class="fas fa-plus">
+                            </i>
+                            Add
+                        </a>
+                    </div>
                 </div><!-- /.row -->
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">
@@ -57,7 +65,7 @@
                                                 {{$third->title_en}}
                                             </td>
                                             <td>
-                                                {{$third->secondpage['title_en']}}
+                                                {{Str::upper($third->second_slug)}}
                                             </td>
                                             <td class="project-actions text-right">
                                                 @if(auth()->user()->can('edit'))

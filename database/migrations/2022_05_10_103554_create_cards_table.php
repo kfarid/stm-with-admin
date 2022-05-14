@@ -23,6 +23,7 @@ return new class extends Migration
             $table->bigInteger('fax')->nullable();
             $table->string('email');
             $table->text('link')->nullable();
+            $table->bigInteger('third_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

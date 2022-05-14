@@ -73,6 +73,21 @@
                                         <img src="value="{{$card->img}}"" alt="" class="img-uploaded" style="display: block; width: 300px">
                                         <input type="text"  value="{{$card->img}}" name="img" class="form-control" id="feature_image"
                                                name="feature_image" readonly>
+                                        <div class="form-group col-sm-6">
+                                            <label>Select Parent Category</label>
+                                            @foreach($thirds as $third)
+                                                <div class="form-group form-check">
+                                                    <input type="checkbox" value="{{$third->id}}"
+                                                           @if($third['id'] == $card['third_id'])checked
+                                                           @endif
+                                                           name="third_id" class="form-check-input"
+                                                           id="exampleCheck{{$third->id}}"
+                                                           placeholder="Enter role name">
+                                                    <label class="form-check-label"
+                                                           for="exampleCheck{{$third->id}}">{{$third->title_en}}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                         <button href="" class="popup_selector btn btn-primary m-2"
                                                 data-inputid="feature_image">Выбрать изображение
                                         </button>

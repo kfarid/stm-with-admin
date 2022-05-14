@@ -57,11 +57,11 @@
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label>Select Home Page</label>
-                                        <select name="home_id" class="form-control">
+                                        <select name="home_slug" class="form-control">
                                             @foreach($homePage as $home)
                                                 <option
-                                                    value="{{$home['id']}}"
-                                                    @if($home['id'] == $second['home_id'])selected
+                                                    value="{{$home['slug_en']}}"
+                                                    @if($home['slug_en'] == $second['home_slug'])selected
                                                     @endif>
                                                     {{$home['title_en']}}
                                                 </option>

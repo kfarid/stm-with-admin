@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomePage;
+use App\Models\Panel;
 use App\Models\SecondPage;
+use App\Models\ThirdPage;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -15,13 +17,27 @@ class FrontController extends Controller
     }
 
     /**
-     * @param $id
+     * @param String $slug_en
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show($id)
+    public function second(String $slug_en)
     {
-        $homes = HomePage::find($id);
-        $seconds = SecondPage::where('home_id', $id)->get();
+        $homes = HomePage::where('slug_en',$slug_en)->get();
+        /*dd($homes);*/
+        $seconds = SecondPage::where('home_slug', $slug_en)->get();
         return view('front.homepage.second', compact('seconds','homes'));
+    }
+
+    /**
+     * @param String $slug_en
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function third(String $slug_en)
+    {
+        $seconds = SecondPage::where('slug_en',$slug_en)->get();
+        /*dd($seconds);*/
+        $thirds = ThirdPage::where('second_slug', $slug_en)->get();
+        $panels = Panel::all();
+        return view('front.homepage.third', compact('seconds','thirds','panels'));
     }
 }

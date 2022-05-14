@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('slug_ru');
             $table->string('slug_tr');
             $table->string('img');
-            $table->bigInteger('home_id')->unsigned();
+            $table->string('home_slug');
             $table->softDeletes();
             $table->timestamps();
         });

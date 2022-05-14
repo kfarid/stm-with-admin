@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('text_az');
             $table->text('text_ru');
             $table->text('text_tr');
+            $table->bigInteger('third_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

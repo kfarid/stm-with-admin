@@ -21,13 +21,11 @@ class ThirdPage extends Model
         'title_ru',
         'title_tr',
         'img',
-        'sec_id',
+        'second_slug',
         'slug_en',
         'slug_az',
         'slug_ru',
         'slug_tr',
-        'card_id',
-        'panel_id',
         'textarea_en',
         'textarea_az',
         'textarea_ru',
@@ -37,10 +35,10 @@ class ThirdPage extends Model
 
     public function secondpage()
     {
-        return $this->belongsTo('App\Models\SecondPage', 'second_id');
+        return $this->belongsTo('App\Models\SecondPage', 'second_slug');
     }
 
-    public function panel()
+    /*public function panel()
     {
         return $this->belongsTo('App\Models\Panel', 'panel_id');
     }
@@ -48,7 +46,7 @@ class ThirdPage extends Model
     public function card()
     {
         return $this->belongsTo('App\Models\Card', 'card_id');
-    }
+    }*/
 
 
     /**

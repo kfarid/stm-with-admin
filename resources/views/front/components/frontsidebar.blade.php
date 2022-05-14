@@ -2,7 +2,7 @@
     <ul id="zone_8">
         @foreach($links as $link)
         <li id="article_2">
-            <a title="{{$link->title_en}}" href="{{route('show',$link->id)}}"><span>{{$link->title_en}}</span></a>
+            <a title="{{$link->title_en}}" href="{{route('second',$link->id)}}"><span>{{$link->title_en}}</span></a>
         </li>
         @endforeach
         <li id="article_2">

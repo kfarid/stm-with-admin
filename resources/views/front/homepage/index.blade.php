@@ -7,7 +7,7 @@
         <div class="boxGridWrapper clearfix boxWrapper indexContent">
             @foreach($homes as $home)
                 <div class="box-item filter-7">
-                <a href="{{route('show',$home->id)}}">
+                <a href="{{route('second',['slug_en' => $home->slug_en])}}">
                     <figure><img src="{{$home->img}}" alt="">
                     </figure>
                     <div class="hover">

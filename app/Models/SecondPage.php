@@ -23,15 +23,16 @@ class SecondPage extends Model
         'slug_az',
         'slug_ru',
         'slug_tr',
-        'home_id'
+        'home_slug'
     ];
 
     protected $dates = ['deleted_at'];
 
     public function homepage()
     {
-        return $this->belongsTo('App\Models\HomePage', 'home_id');
+        return $this->belongsTo('App\Models\HomePage', 'home_slug');
     }
+
 
 
       /**
@@ -43,16 +44,16 @@ class SecondPage extends Model
     {
         return [
             'slug_en' => [
-                'source' => 'title_en, id'
+                'source' => 'title_en'
             ],
             'slug_az' => [
-                'source' => 'title_az, id'
+                'source' => 'title_az'
             ],
             'slug_ru' => [
-                'source' => 'title_ru, id'
+                'source' => 'title_ru'
             ],
             'slug_tr' => [
-                'source' => 'title_tr, id'
+                'source' => 'title_tr'
             ]
         ];
     }

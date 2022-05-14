@@ -54,9 +54,9 @@
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label>Select Home Page</label>
-                                        <select name="home_id" class="form-control">
+                                        <select name="home_slug" class="form-control">
                                             @foreach($homePage as $home)
-                                                <option value="{{$home['id']}}">{{$home['title_en']}}</option>
+                                                <option value="{{$home['slug_en']}}">{{$home['title_en']}}</option>
                                             @endforeach
                                         </select>
                                     </div>

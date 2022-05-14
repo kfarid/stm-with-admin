@@ -69,6 +69,22 @@
                                         <label>Text TR</label>
                                         <textarea name="text_tr" class="editor">{{$panel->text_tr}} </textarea>
                                     </div>
+
+                                    <div class="form-group col-sm-6">
+                                        <label>Select Parent Category</label>
+                                        @foreach($thirds as $third)
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" value="{{$third->id}}"
+                                                       @if($third['id'] == $panel['third_id'])checked
+                                                    @endif
+                                                       name="third_id" class="form-check-input"
+                                                       id="exampleCheck{{$third->id}}"
+                                                       placeholder="Enter role name">
+                                                <label class="form-check-label"
+                                                       for="exampleCheck{{$third->id}}">{{$third->title_en}}</label>
+                                            </div>
+                                        @endforeach
+                                    </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary ">Update</button>
                                     </div>

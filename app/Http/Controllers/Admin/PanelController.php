@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Panel;
+use App\Models\ThirdPage;
 use Illuminate\Http\Request;
 
 class PanelController extends Controller
@@ -26,7 +27,8 @@ class PanelController extends Controller
      */
     public function create()
     {
-        return view('admin.panel.create');
+        $thirds = ThirdPage::orderBy('created_at','DESC')->get();
+        return view('admin.panel.create',compact('thirds'));
     }
 
     /**
@@ -46,6 +48,7 @@ class PanelController extends Controller
         $panels->text_az = $request->text_az;
         $panels->text_ru = $request->text_ru;
         $panels->text_tr = $request->text_tr;
+        $panels->third_id = $request->third_id;
         $panels->save();
 
         return redirect()->route('panel.index')->withSuccess('Perfectly added');
@@ -71,7 +74,8 @@ class PanelController extends Controller
      */
     public function edit(Panel $panel)
     {
-        return view('admin.panel.edit',compact('panel'));
+        $thirds = ThirdPage::orderBy('created_at','DESC')->get();
+        return view('admin.panel.edit',compact('panel','thirds'));
     }
 
     /**
@@ -91,7 +95,8 @@ class PanelController extends Controller
         $panel->text_az = $request->text_az;
         $panel->text_ru = $request->text_ru;
         $panel->text_tr = $request->text_tr;
-        $panel->save();
+        $panel->third_id = $request->third_id;
+        $panel->update();
 
         return redirect()->route('panel.index')->withSuccess('Perfectly updated');
     }

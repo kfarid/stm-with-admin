@@ -46,7 +46,7 @@ class SecondController extends Controller
         $secondPage->title_ru = $request->title_ru;
         $secondPage->title_tr = $request->title_tr;
         $secondPage->img = $request->img;
-        $secondPage->home_id = $request->home_id;
+        $secondPage->home_slug = $request->home_slug;
         $secondPage->save();
 
         return redirect()->route('secondpage.index')->withSuccess('Perfectly added');
@@ -94,7 +94,7 @@ class SecondController extends Controller
         $secondPage->title_ru = $request->title_ru;
         $secondPage->title_tr = $request->title_tr;
         $secondPage->img = $request->img;
-        $secondPage->home_id = $request->home_id;
+        $secondPage->home_slug = $request->home_slug;
         $secondPage->update();
 
         return redirect()->route('secondpage.index')->withSuccess('Perfectly edited');

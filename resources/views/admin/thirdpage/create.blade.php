@@ -54,37 +54,11 @@
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label>Select Second Page</label>
-                                        <select name="second_id" class="form-control">
+                                        <select name="second_slug" class="form-control">
                                             @foreach($secondPage as $second)
-                                                <option value="{{$second['id']}}">{{$second['title_en']}}</option>
+                                                <option value="{{$second['slug_en']}}">{{$second['title_en']}}</option>
                                             @endforeach
                                         </select>
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label>Select Panel</label>
-                                        @foreach($panels as $panel)
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" value="{{$panel->id}}"
-                                                       name="panels[]" class="form-check-input"
-                                                       id="exampleCheck{{$panel->id}}"
-                                                       placeholder="Enter role name">
-                                                <label class="form-check-label"
-                                                       for="exampleCheck{{$panel->id}}">{{$panel->name}}</label>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label>Select Card</label>
-                                        @foreach($cards as $card)
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" value="{{$card->id}}"
-                                                       name="cards[]" class="form-check-input"
-                                                       id="exampleCheck{{$card->id}}"
-                                                       placeholder="Enter role name">
-                                                <label class="form-check-label"
-                                                       for="exampleCheck{{$card->id}}">{{$card->title}}</label>
-                                            </div>
-                                        @endforeach
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label>Text EN</label>

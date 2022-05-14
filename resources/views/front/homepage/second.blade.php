@@ -1,12 +1,15 @@
 @extends('layouts.front')
+@section('title','')
 @section('content')
     <article class="sidecontent-inner">
         <div class="topSpace">
             <ul class="breadcrumb">
                 <li><a href="/">{{__('HOME')}}</a></li>
-                <li>{{$homes->title_en}}</li>
+                @foreach($homes as $home)
+                <li>{{$home->title_en}}</li>
             </ul>
-            <h1>{{strtoupper($homes->title_en)}}</h1>
+            <h1>{{strtoupper($home->title_en)}}</h1>
+            @endforeach
         </div>
         <div class="extra-items">
             <div class="box-item">
@@ -19,7 +22,7 @@
          <div class="boxMenuWrapper clearfix boxWrapper">
              @foreach($seconds as $second)
                 <div class="box-item">
-                <a href="">
+                <a href="{{route('third',['slug_en'=>$second->slug_en])}}">
                     <figure><img src="/{{$second->img}}" alt=""></figure>
                     <div class="item-detail">
                         <div class="title">{{$second->title_en}}</div>

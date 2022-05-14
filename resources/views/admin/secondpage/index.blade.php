@@ -7,9 +7,17 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <h1 class="m-0">All Post </h1>
                     </div><!-- /.col -->
+                    <div class="col-sm-12">
+                        <a class="btn btn-dark btn-sm" role="button"
+                           href="{{route('secondpage.create')}}">
+                            <i class="fas fa-plus">
+                            </i>
+                            Add
+                        </a>
+                    </div>
                 </div><!-- /.row -->
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">
@@ -57,7 +65,7 @@
                                                 {{$second->title_en}}
                                             </td>
                                             <td>
-                                                {{$second->homepage['title_en']}}
+                                                {{Str::upper($second->home_slug)}}
                                             </td>
                                             <td class="project-actions text-right">
                                                 @if(auth()->user()->can('edit'))

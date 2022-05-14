@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Card;
+use App\Models\ThirdPage;
 use Illuminate\Http\Request;
 
 class CardController extends Controller
@@ -16,7 +17,8 @@ class CardController extends Controller
     public function index()
     {
         $cards = Card::orderby('created_at','desc')->get();
-        return view('admin.card.index',compact('cards'));
+        $thirds = ThirdPage::all();
+        return view('admin.card.index',compact('cards','thirds'));
     }
 
     /**
@@ -26,7 +28,8 @@ class CardController extends Controller
      */
     public function create()
     {
-       return view('admin.card.create');
+        $thirds = ThirdPage::all();
+       return view('admin.card.create',compact('thirds'));
     }
 
     /**
@@ -69,7 +72,8 @@ class CardController extends Controller
      */
     public function edit(Card $card)
     {
-       return view('admin.card.edit',compact('card'));
+        $thirds = ThirdPage::all();
+       return view('admin.card.edit',compact('card','thirds'));
     }
 
     /**

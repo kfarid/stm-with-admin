@@ -54,11 +54,11 @@
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label>Select Second Page</label>
-                                        <select name="second_id" class="form-control">
-                                            @foreach($second as $page)
+                                        <select name="second_slug" class="form-control">
+                                            @foreach($seconds as $page)
                                                 <option
-                                                    value="{{$page['id']}}"
-                                                    @if($page['id'] == $third['home_id'])selected
+                                                    value="{{$page['slug_en']}}"
+                                                    @if($page['slug_en'] == $third['second_slug'])selected
                                                     @endif>
                                                     {{$page['title_en']}}
                                                 </option>
@@ -70,11 +70,11 @@
                                         @foreach($panels as $panel)
                                             <div class="form-group form-check">
                                                 <input type="checkbox" value="{{$panel->id}}"
-                                                       name="panels[]" class="form-check-input"
+                                                       name="panel_id" class="form-check-input"
                                                        id="exampleCheck{{$panel->id}}"
                                                        placeholder="Enter role name">
                                                 <label class="form-check-label"
-                                                       for="exampleCheck{{$panel->id}}">{{$panel->name}}</label>
+                                                       for="exampleCheck{{$panel->id}}">{{$panel->name_en}}</label>
                                             </div>
                                         @endforeach
                                     </div>
@@ -93,26 +93,26 @@
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label>Text EN</label>
-                                        <textarea value="{{$third->textarea_en}}}" name="textarea_en" class="editor"> </textarea>
+                                        <textarea name="textarea_en" class="editor">{{$third->textarea_en}}</textarea>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label>Text AZ</label>
-                                        <textarea value="{{$third->textarea_az}}}" name="textarea_az" class="editor"> </textarea>
+                                        <textarea name="textarea_az" class="editor">{{$third->textarea_az}} </textarea>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label>Text RU</label>
-                                        <textarea value="{{$third->textarea_ru}}}" name="textarea_ru" class="editor"> </textarea>
+                                        <textarea name="textarea_ru" class="editor">{{$third->textarea_ru}} </textarea>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label>Text TR</label>
-                                        <textarea value="{{$third->textarea_tr}}}" name="textarea_tr" class="editor"> </textarea>
+                                        <textarea name="textarea_tr" class="editor"> {{$third->textarea_tr}}</textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="feature_image">Select Image</label>
-                                        <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
+                                        <img src="{{$third->img}}" alt="" class="img-uploaded" style="display: block; width: 300px">
                                         <input type="text" name="img" class="form-control" id="feature_image"
-                                               name="feature_image" value="" readonly>
+                                               name="feature_image" value="{{$third->img}}" readonly>
                                         <button href="" class="popup_selector btn btn-primary m-2"
                                                 data-inputid="feature_image">Выбрать изображение
                                         </button>

@@ -15,6 +15,7 @@ $(document).ready(function () {
             return false;
         }
     });
+
 })
 
 
@@ -25,6 +26,9 @@ tinymce.init({
     relative_urls: false,
     file_picker_callback: elFinderBrowser
 });
+
+
+
 
 function elFinderBrowser(callback, value, meta) {
     tinymce.activeEditor.windowManager.openUrl({

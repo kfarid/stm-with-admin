@@ -23,7 +23,7 @@
              @foreach($seconds as $second)
                 <div class="box-item">
                 <a href="{{route('third',['slug_en'=>$second->slug_en])}}">
-                    <figure><img src="/{{$second->img}}" alt=""></figure>
+                    <figure><img src="{{$second->img}}" alt=""></figure>
                     <div class="item-detail">
                         <div class="title">{{$second->title_en}}</div>
                     </div>

@@ -18,6 +18,4 @@ $(document).on('click','.popup_selector',function (event) {
 function processSelectedFile(filePath, requestingField) {
     $('#' + requestingField).val('/'+filePath).trigger('change');
     $('.img-uploaded').attr('src', '/'+filePath).trigger('change');
-    /*$('.img-uploaded').replace(/\\/g, '/').trigger('change');*/
-    /*path = path.replace(/\\/g, '/');*/
 }

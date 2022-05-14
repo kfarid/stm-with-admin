@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Card;
 use App\Models\HomePage;
 use App\Models\Panel;
 use App\Models\SecondPage;
 use App\Models\ThirdPage;
 use Illuminate\Http\Request;
+use Symfony\Component\VarDumper\VarDumper;
 
 class FrontController extends Controller
 {
@@ -37,7 +39,8 @@ class FrontController extends Controller
         $seconds = SecondPage::where('slug_en',$slug_en)->get();
         /*dd($seconds);*/
         $thirds = ThirdPage::where('second_slug', $slug_en)->get();
-        $panels = Panel::all();
-        return view('front.homepage.third', compact('seconds','thirds','panels'));
+        $panels = Panel::orderBy('created_at',"DESC")->get();
+        $cards = Card::orderBy('created_at',"DESC")->get();
+        return view('front.homepage.third', compact('seconds','thirds','panels','cards'));
     }
 }

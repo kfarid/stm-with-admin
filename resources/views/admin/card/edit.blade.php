@@ -73,6 +73,10 @@
                                         <img src="value="{{$card->img}}"" alt="" class="img-uploaded" style="display: block; width: 300px">
                                         <input type="text"  value="{{$card->img}}" name="img" class="form-control" id="feature_image"
                                                name="feature_image" readonly>
+                                        <button href="" class="popup_selector btn btn-primary m-2"
+                                                data-inputid="feature_image">Выбрать изображение
+                                        </button>
+                                    </div>
                                         <div class="form-group col-sm-6">
                                             <label>Select Parent Category</label>
                                             @foreach($thirds as $third)
@@ -88,9 +92,7 @@
                                                 </div>
                                             @endforeach
                                         </div>
-                                        <button href="" class="popup_selector btn btn-primary m-2"
-                                                data-inputid="feature_image">Выбрать изображение
-                                        </button>
+
                                     </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary ">Update</button>

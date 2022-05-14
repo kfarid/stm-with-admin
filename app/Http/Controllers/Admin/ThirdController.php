@@ -45,16 +45,7 @@ class ThirdController extends Controller
     public function store(Request $request)
     {
         $thirdPage = new ThirdPage();
-        $thirdPage->title_en = $request->title_en;
-        $thirdPage->title_az = $request->title_az;
-        $thirdPage->title_ru = $request->title_ru;
-        $thirdPage->title_tr = $request->title_tr;
-        $thirdPage->textarea_en = $request->textarea_en;
-        $thirdPage->textarea_az = $request->textarea_az;
-        $thirdPage->textarea_ru = $request->textarea_ru;
-        $thirdPage->textarea_tr = $request->textarea_tr;
-        $thirdPage->img = $request->img;
-        $thirdPage->second_slug = $request->second_slug;
+        $this->extracted($request, $thirdPage);
 
         $thirdPage->save();
 
@@ -103,16 +94,7 @@ class ThirdController extends Controller
     public function update(Request $request, $id)
     {
         $thirdPage = ThirdPage::find($id);;
-        $thirdPage->title_en = $request->title_en;
-        $thirdPage->title_az = $request->title_az;
-        $thirdPage->title_ru = $request->title_ru;
-        $thirdPage->title_tr = $request->title_tr;
-        $thirdPage->textarea_en = $request->textarea_en;
-        $thirdPage->textarea_az = $request->textarea_az;
-        $thirdPage->textarea_ru = $request->textarea_ru;
-        $thirdPage->textarea_tr = $request->textarea_tr;
-        $thirdPage->img = $request->img;
-        $thirdPage->second_slug = $request->second_slug;
+        $this->extracted($request, $thirdPage);
 
         $thirdPage->update();
 
@@ -131,7 +113,26 @@ class ThirdController extends Controller
         DB::table('third_pages')
             ->where('id', $id)
             ->delete();
-        return redirect()->route('secondpage.index')->withSuccess('Perfectly deleted');
+        return redirect()->route('thirdpage.index')->withSuccess('Perfectly deleted');
 
+    }
+
+    /**
+     * @param Request $request
+     * @param $thirdPage
+     * @return void
+     */
+    public function extracted(Request $request, $thirdPage): void
+    {
+        $thirdPage->title_en = $request->title_en;
+        $thirdPage->title_az = $request->title_az;
+        $thirdPage->title_ru = $request->title_ru;
+        $thirdPage->title_tr = $request->title_tr;
+        $thirdPage->textarea_en = $request->textarea_en;
+        $thirdPage->textarea_az = $request->textarea_az;
+        $thirdPage->textarea_ru = $request->textarea_ru;
+        $thirdPage->textarea_tr = $request->textarea_tr;
+        $thirdPage->img = $request->img;
+        $thirdPage->second_slug = $request->second_slug;
     }
 }

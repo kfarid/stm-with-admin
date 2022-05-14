@@ -45,6 +45,7 @@ Route::prefix('/')->group(function (){
     Route::get('/',[\App\Http\Controllers\FrontController::class,'index'])->name('index');
     Route::get('second/{slug_en}',[\App\Http\Controllers\FrontController::class,'second'])->name('second');
     Route::get('third/{slug_en}',[\App\Http\Controllers\FrontController::class,'third'])->name('third');
+    Route::get('contacts/',[\App\Http\Controllers\ContactController::class,'contacts'])->name('contacts');
 });
 
 

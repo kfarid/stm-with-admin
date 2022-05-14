@@ -41,14 +41,7 @@ class CardController extends Controller
     public function store(Request $request)
     {
         $cards = new Card();
-        $cards->category = $request->category;
-        $cards->title = $request->title;
-        $cards->location = $request->location;
-        $cards->phone = $request->phone;
-        $cards->fax = $request->fax;
-        $cards->email = $request->email;
-        $cards->link = $request->link;
-        $cards->img = $request->img;
+        $this->extracted($request, $cards);
         $cards->save();
         return redirect()->route('card.index')->withSuccess('Cards added');
     }
@@ -85,14 +78,7 @@ class CardController extends Controller
      */
     public function update(Request $request, Card $card)
     {
-        $card->category = $request->category;
-        $card->title = $request->title;
-        $card->location = $request->location;
-        $card->phone = $request->phone;
-        $card->fax = $request->fax;
-        $card->email = $request->email;
-        $card->link = $request->link;
-        $card->img = $request->img;
+        $this->extracted($request, $card);
         $card->update();
         return redirect()->route('card.index')->withSuccess('Cards updated');
     }
@@ -107,5 +93,23 @@ class CardController extends Controller
     {
         $card->delete();
         return redirect()->route('card.index')->withSuccess('Cards deleted');
+    }
+
+    /**
+     * @param Request $request
+     * @param Card $card
+     * @return void
+     */
+    public function extracted(Request $request, Card $card): void
+    {
+        $card->category = $request->category;
+        $card->title = $request->title;
+        $card->location = $request->location;
+        $card->phone = $request->phone;
+        $card->fax = $request->fax;
+        $card->email = $request->email;
+        $card->link = $request->link;
+        $card->img = $request->img;
+        $card->third_id = $request->third_id;
     }
 }

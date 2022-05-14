@@ -4,11 +4,11 @@
     <x-backbutton></x-backbutton>
     <div class="fixedColumn hover" style="width: 38%;">
         @foreach($thirds as $third)
-        <div class="inner"
-             style="background-image: url({{'/'.$third->img}}); opacity: 1; transform:
+        <img class="inner seperator" src="{{$third->img}}"
+             style="opacity: 1; transform:
                  matrix(1, 0, 0, 1, 0, 0);">
             <div class="cover" style="transform: translate(100%, 0%) matrix(1, 0, 0, 1, 0, 0);"></div>
-        </div>
+        </img>
         @endforeach
     </div>
     <div class="sideContent" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
@@ -52,6 +52,38 @@
                         <br>
                     @endif
                 @endforeach
+
+                @foreach($cards as $card)
+                    @if($third->id == $card->third_id)
+                <div class="image-list clearfix withinfo column-c1">
+                    <div class="colon-2">
+                        <div class="col-inner">
+                            <figure>
+                                <img alt="" src="{{$card->img}}" style="max-width: 200px"></figure>
+                            <div class="info">
+                                <div class="info-in">
+                                    <p class="title">{{$card->title}}</p>
+                                    <ul class="contact-info">
+                                        <li class="location">{{$card->location}} </li>
+                                        <li class="address">{{$card->address}} </li>
+                                        <li class="email">{{$card->email}} </li>
+                                        <li class="phone">
+                                            <a href="tel:+{{$card->phone}}">+{{$card->phone}}</a></li>
+                                        <li class="fax">
+                                            <a href="tel:+{{$card->fax}}">+{{$card->fax}}</a></li>
+                                        <li class="mail">
+                                         <a href="{{$card->link}}" target="_blank"><strong>{{$card->link}}</strong></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    @else
+                        <br>
+                    @endif
+                @endforeach
+
                     @endforeach
             <br>
             <br>

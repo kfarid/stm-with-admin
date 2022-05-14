@@ -65,32 +65,6 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group col-sm-6">
-                                        <label>Select Panel</label>
-                                        @foreach($panels as $panel)
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" value="{{$panel->id}}"
-                                                       name="panel_id" class="form-check-input"
-                                                       id="exampleCheck{{$panel->id}}"
-                                                       placeholder="Enter role name">
-                                                <label class="form-check-label"
-                                                       for="exampleCheck{{$panel->id}}">{{$panel->name_en}}</label>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label>Select Card</label>
-                                        @foreach($cards as $card)
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" value="{{$card->id}}"
-                                                       name="cards[]" class="form-check-input"
-                                                       id="exampleCheck{{$card->id}}"
-                                                       placeholder="Enter role name">
-                                                <label class="form-check-label"
-                                                       for="exampleCheck{{$card->id}}">{{$card->title}}</label>
-                                            </div>
-                                        @endforeach
-                                    </div>
                                     <div class="form-group col-sm-12">
                                         <label>Text EN</label>
                                         <textarea name="textarea_en" class="editor">{{$third->textarea_en}}</textarea>

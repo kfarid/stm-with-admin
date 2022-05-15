@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Middleware\Localization;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,17 +37,19 @@ Route::middleware(['roles:admin'])->prefix('admin_panel')->group( function () {
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
 });
 
+/*
+Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'contacts'])->name('contacts');
+Route::post('/contacts', [App\Http\Controllers\ContactController::class, 'storeContact'])->name('contacts.store');
+*/
 
-/*Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contactForm'])->name('contact-form');
-Route::post('/contact', [App\Http\Controllers\ContactController::class, 'storeContactForm'])->name('contact-form.store');*/
 
-
-
-Route::prefix('/')->group(function (){
+Route::controller(['Localization'])->prefix('/')->group(function (){
+    Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class, 'index']);
     Route::get('/',[\App\Http\Controllers\FrontController::class,'index'])->name('index');
     Route::get('second/{slug_en}',[\App\Http\Controllers\FrontController::class,'second'])->name('second');
     Route::get('third/{slug_en}',[\App\Http\Controllers\FrontController::class,'third'])->name('third');
-    Route::get('contacts/',[\App\Http\Controllers\ContactController::class,'contacts'])->name('contacts');
+    Route::get('contact',[ContactController::class,'contact'])->name('contact');
+    Route::post('contact',[ContactController::class,'storeContact'])->name('contact.store');
 });
 
 

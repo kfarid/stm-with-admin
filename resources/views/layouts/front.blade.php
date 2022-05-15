@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
     <title>@yield('title')</title>
@@ -9,6 +9,7 @@
           content="Gayrimenkul, Turizm, Restorasyon, Konut, Otel, Mix-used, Gayreimenkul geliştime, konut geliştirme, proje geliştirme, karma projeler"/>
     <!--<link rel="canonical" href=""/>-->
     <meta charset="utf-8"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
     <!-- Basic Page Needs -->
@@ -21,7 +22,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#0065b1">
     <meta property="og:type " content="website "/>
     <!--       <meta property="og:site_name " content="STM ">-->
-    <meta property="og:locale " content="tr_TR "/>
     <meta property="og:url " content="# "/>
     <!--<meta property="og:title " content="STM ANASAYFA " />-->
     <meta property="og:image " content="# "/>
@@ -38,7 +38,7 @@
     <link href={{asset('Content/assets/css/slick-theme.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/main.css')}} rel="stylesheet"/>
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">--}}
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         @media only screen and (max-width: 767px) {
             #splash {
@@ -101,7 +101,7 @@
     </noscript>
 </head>
 
-<body lang="en" xml:lang="en">
+<body >
 
 <div class="st-container" id="indexPage">
 

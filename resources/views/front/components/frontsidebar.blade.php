@@ -9,11 +9,8 @@
             <a title="KURUMSAL SORUMLULUK" href=""><span>KURUMSAL SORUMLULUK</span></a>
         </li>
         <li id="article_2">
-            <a title="BASIN ODASI " href=""><span>BASIN ODASI</span></a>
-        </li>
-        <li id="article_2">
             <a title="&#304;LET&#304;&#350;&#304;M"
-               href=""><span>&#304;LET&#304;&#350;&#304;M</span></a>
+               href="{{route('contact')}}"><span>CONTACT US</span></a>
         </li>
     </ul>
     <!-- Processed in 16,0012 ms menu_temp:  -->

@@ -23,14 +23,14 @@
                     itemprop="child">
                     @foreach($seconds as $second)
                     <a href="" itemprop="url">
-                        <span itemprop="title">{{$second->title_en}}</span>
+                        <span itemprop="title">{{$second->{'title_'.app()->getLocale()} }}</span>
                     </a>
                     @endforeach
                 </li>
             </ul>
             @foreach($thirds as $third)
-            <h1>{{$third->title_en}}</h1>
-            <div>{!! $third->textarea_en!!}
+            <h1>{{$third->{'title_'.app()->getLocale()} }}</h1>
+            <div>{!! $third->{'textarea_'.app()->getLocale()}!!}
             </div>
 
                 @foreach($panels as $panel)
@@ -39,11 +39,11 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <div data-parent="#accordion" data-target="#collapse1" data-toggle="collapse">
-                                    {{$panel->name_en}}</div>
+                                    {{$panel->{'name_e'.app()->getLocale()} }}</div>
                             </div>
                             <div class="panel-collapse collapse" id="collapse1">
                                 <div class="inner">
-                                    <p>{!! $panel->text_en!!}</p>
+                                    <p>{!! $panel->{'text_'.app()->getLocale()} !!}</p>
                                 </div>
                             </div>
                         </div>

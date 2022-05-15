@@ -59,7 +59,7 @@
                             <div class="mailbox-controls">
                                 <!-- Check all button -->
                                 <div class="float-right">
-                                    {{ $contacts->links() }}
+
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-default btn-sm">
                                             <i class="fas fa-chevron-left"></i>
@@ -114,7 +114,7 @@
                             <div class="mailbox-controls">
                                 <!-- Check all button -->
                                 <div class="float-right">
-                                    {{ $contacts->links() }}
+
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-default btn-sm">
                                             <i class="fas fa-chevron-left"></i>

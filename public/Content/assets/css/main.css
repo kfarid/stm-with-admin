@@ -380,9 +380,9 @@ header ul .lang a {
     display: block;
 }
 
-header ul .lang:hover a {
+/*header ul .lang:hover a {
     color: #fff;
-}
+}*/
 
 header ul .search {
     background: url(../img/search.png) no-repeat center;
@@ -3814,19 +3814,19 @@ footer form input[type="submit"]:hover {
     color: #5590cf;
 }
 
-.contactForm {
+.contactForms{
     margin-bottom: 3em;
 }
 
-.contactForm label {
+.contactForms label {
     display: block;
     font-family: 'montserratsemi_bold', sans-serif;
     margin-bottom: 5px;
     font-size: 0.98em;
 }
 
-.contactForm input,
-.contactForm textarea {
+.contactForms input,
+.contactForms textarea {
     display: block;
     width: 100%;
     padding: 15px;
@@ -3834,11 +3834,11 @@ footer form input[type="submit"]:hover {
     font-size: 0.9em;
 }
 
-.contactForm .row {
+.contactForms .row {
     margin-bottom: 2em;
 }
 
-.contactForm .submit {
+.contactForms .submit {
     display: inline-block;
     width: auto;
     border: none;
@@ -3851,17 +3851,17 @@ footer form input[type="submit"]:hover {
     transition: all .25s ease-out;
 }
 
-.contactForm .submit:hover {
+.contactForms .submit:hover {
     background: #5590cf;
 }
 
-.contactForm p {
+.contactForms p {
     margin-top: 0;
     font-size: 0.8125em;
     font-style: italic;
 }
 
-.contactForm label.error {
+.contactForms label.error {
     position: absolute;
     font-size: 0.83em;
     font-style: italic;
@@ -5188,23 +5188,23 @@ body.dergiWrap article.sidecontent-inner {
         border-bottom: none;
     }
 
-    .contactForm > .row > .col-1-2 {
+    .contactForms > .row > .col-1-2 {
         width: 100%;
         float: none;
         margin-bottom: 1.5em;
     }
 
-    .contactForm .row {
+    .contactForms .row {
         margin-bottom: 0;
     }
 
-    .contactForm label.error {
+    .contactForms label.error {
         margin-bottom: 0;
         margin-top: 2px;
         bottom: -18px;
     }
 
-    .contactForm .col-1-2 > p {
+    .contactForms .col-1-2 > p {
         margin-top: 25px;
     }
 

@@ -6,9 +6,9 @@
             <ul class="breadcrumb">
                 <li><a href="/">{{__('HOME')}}</a></li>
                 @foreach($homes as $home)
-                <li>{{$home->title_en}}</li>
+                <li>{{$home->{'title_'.app()->getLocale()} }}</li>
             </ul>
-            <h1>{{strtoupper($home->title_en)}}</h1>
+            <h1>{{strtoupper($home->{'title_'.app()->getLocale()})}}</h1>
             @endforeach
         </div>
         <div class="extra-items">
@@ -25,7 +25,7 @@
                 <a href="{{route('third',['slug_en'=>$second->slug_en])}}">
                     <figure><img src="{{$second->img}}" alt=""></figure>
                     <div class="item-detail">
-                        <div class="title">{{$second->title_en}}</div>
+                        <div class="title">{{$second->{'title_'.app()->getLocale()} }}</div>
                     </div>
                     <div class="hover">
                         <svg xmlns="http://www.w3.org/2000/svg"

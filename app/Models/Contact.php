@@ -12,4 +12,12 @@ class Contact extends Model
 
 
     protected $dates = ['deleted_at'];
+
+    public $fillable = [
+        'name',
+        'email',
+        'subject',
+        'message',
+        'phone'
+    ];
 }

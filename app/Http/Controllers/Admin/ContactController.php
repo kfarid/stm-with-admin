@@ -15,7 +15,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::orderBy('created_at','DESC')->paginate(20);
+        $contacts = Contact::orderBy('created_at','DESC')->get();
         $mail_count = Contact::orderBy('created_at','DESC')->count();
         return view('admin.contact.index',compact('contacts','mail_count',));
     }

@@ -47,6 +47,7 @@ Route::post('/contacts', [App\Http\Controllers\ContactController::class, 'storeC
 
 Route::controller(['Localization'])->prefix('/')->group(function (){
     Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class, 'index']);
+    /*    Route::get('theme/{theme}', [App\Http\Controllers\ThemeModeController::class, 'index']);*/
     Route::get('/',[\App\Http\Controllers\FrontController::class,'index'])->name('index');
     Route::get('second/{slug_en}',[\App\Http\Controllers\FrontController::class,'second'])->name('second');
     Route::get('third/{slug_en}',[\App\Http\Controllers\FrontController::class,'third'])->name('third');

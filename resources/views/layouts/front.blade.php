@@ -39,10 +39,10 @@
     <!-- Styles -->
     <link href={{asset('Content/assets/css/Carousel.css')}} rel="stylesheet">
     <link href={{asset('Content/assets/css/font-awesome.min.css')}} rel="stylesheet">
-    <link href={{asset('Content/assets/css/plugins_min.css')}} rel="stylesheet"/>
+    <link href="/Content/assets/css/plugins_min.css" rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick-theme.css')}} rel="stylesheet"/>
-    <link href={{asset('Content/assets/css/main-dark.css')}} rel="stylesheet"/>
+    <link href="/Content/assets/css/main.css" rel="stylesheet"/>
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
@@ -105,14 +105,21 @@
         <img height="1" width="1" style="display:none"
              src="https://www.facebook.com/tr?id=1213343435445466&ev=PageView&noscript=1"/>
     </noscript>
+    {{--<script>
+        function change()
+        {
+            document.querySelector("link[href='/Content/assets/css/main.css']").href = "/Content/assets/css/main-dark.css";
+            document.querySelector("link[href='/Content/assets/css/plugins_min.css']").href = "/Content/assets/css/plugins_min-dark.css";
+        }
+    </script>--}}
 </head>
-
 <body >
 @foreach($googles as $google)
     {!! $google->tag_script_body!!}
 @endforeach
 
 <div class="st-container" id="indexPage">
+
 
     <x-header></x-header>
 

@@ -1,14 +1,14 @@
 @extends('layouts.front  ')
-@section('title','KURUCUMUZ')
+@section('title','Third')
 @section('content')
     <x-backbutton></x-backbutton>
     <div class="fixedColumn hover" style="width: 38%;">
         @foreach($thirds as $third)
-        <img class="inner seperator" src="{{$third->img}}"
-             style="opacity: 1; transform:
+            <img class="inner seperator" src="{{$third->img}}"
+                 style="opacity: 1; transform:
                  matrix(1, 0, 0, 1, 0, 0);">
             <div class="cover" style="transform: translate(100%, 0%) matrix(1, 0, 0, 1, 0, 0);"></div>
-        </img>
+            </img>
         @endforeach
     </div>
     <div class="sideContent" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
@@ -16,38 +16,38 @@
             <ul class="breadcrumb">
                 <li id="26" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="28">
                     <a href="{{route('index')}}" itemprop="url">
-                        <span itemprop="title">{{__('STM TANIYIN')}}</span>
+                        <span itemprop="title">{{__('HOME')}}</span>
                     </a>
                 </li>
                 <li id="28" class="active" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"
                     itemprop="child">
                     @foreach($seconds as $second)
-                    <a href="" itemprop="url">
-                        <span itemprop="title">{{$second->{'title_'.app()->getLocale()} }}</span>
-                    </a>
+                        <a href="" itemprop="url">
+                            <span itemprop="title">{{Str::upper($second->{'title_'.app()->getLocale()}) }}</span>
+                        </a>
                     @endforeach
                 </li>
             </ul>
             @foreach($thirds as $third)
-            <h1>{{$third->{'title_'.app()->getLocale()} }}</h1>
-            <div>{!! $third->{'textarea_'.app()->getLocale()}!!}
-            </div>
+                <h1>{{$third->{'title_'.app()->getLocale()} }}</h1>
+                <div>{!! $third->{'textarea_'.app()->getLocale()}!!}
+                </div>
 
                 @foreach($panels as $panel)
                     @if($third->id == $panel->third_id)
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div data-parent="#accordion" data-target="#collapse1" data-toggle="collapse">
-                                    {{$panel->{'name_e'.app()->getLocale()} }}</div>
-                            </div>
-                            <div class="panel-collapse collapse" id="collapse1">
-                                <div class="inner">
-                                    <p>{!! $panel->{'text_'.app()->getLocale()} !!}</p>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div data-parent="#accordion" data-target="#collapse1" data-toggle="collapse">
+                                        {{$panel->{'name_'.app()->getLocale()} }}</div>
+                                </div>
+                                <div class="panel-collapse collapse" id="collapse1">
+                                    <div class="inner">
+                                        <p>{!! $panel->{'text_'.app()->getLocale()} !!}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @else
                         <br>
                     @endif
@@ -55,36 +55,55 @@
 
                 @foreach($cards as $card)
                     @if($third->id == $card->third_id)
-                <div class="image-list clearfix withinfo column-c1">
-                    <div class="colon-2">
-                        <div class="col-inner">
-                            <figure>
-                                <img alt="" src="{{$card->img}}" style="max-width: 200px"></figure>
-                            <div class="info">
-                                <div class="info-in">
-                                    <p class="title">{{$card->title}}</p>
-                                    <ul class="contact-info">
-                                        <li class="location">{{$card->location}} </li>
-                                        <li class="address">{{$card->address}} </li>
-                                        <li class="email">{{$card->email}} </li>
-                                        <li class="phone">
-                                            <a href="tel:+{{$card->phone}}">+{{$card->phone}}</a></li>
-                                        <li class="fax">
-                                            <a href="tel:+{{$card->fax}}">+{{$card->fax}}</a></li>
-                                        <li class="mail">
-                                         <a href="{{$card->link}}" target="_blank"><strong>{{$card->link}}</strong></a></li>
-                                    </ul>
+                        <div class="image-list clearfix withinfo column-c1">
+                            <div class="colon-2">
+                                <div class="col-inner">
+                                    <figure>
+                                        <img alt="" src="{{$card->img}}" style="max-width: 200px"></figure>
+                                    <div class="info">
+                                        <div class="info-in">
+                                            <p class="title">{{$card->title}}</p>
+                                            <ul class="contact-info">
+                                                <li class="location">
+                                                    <i class="fa-solid fa-location-dot"></i>
+                                                    {{$card->location}}
+                                                </li>
+                                                <li class="email">
+                                                    <a href="mailto:{{$card->email}}">
+                                                    <i class="fa-solid fa-envelope"></i>
+                                                    {{$card->email}}
+                                                    </a>
+                                                </li>
+                                                <li class="phone">
+                                                    <a href="tel:+{{$card->phone}}">
+                                                        <i class="fa-solid fa-phone"></i>
+                                                        +{{$card->phone}}
+                                                    </a>
+                                                </li>
+                                                <li class="fax">
+                                                    <a href="tel:+{{$card->fax}}">
+                                                        <i class="fa-solid fa-fax"></i>
+                                                        +{{$card->fax}}
+                                                    </a>
+                                                </li>
+                                                <li class="mail">
+                                                    <a href="{{$card->link}}" target="_blank">
+                                                        <i class="fa-solid fa-globe"></i>
+                                                        <strong>{{$card->link}}</strong>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
                     @else
                         <br>
                     @endif
                 @endforeach
 
-                    @endforeach
+            @endforeach
             <br>
             <br>
 
@@ -97,8 +116,8 @@
                 <div class="tab-wrapper">
                     <div class="tab-link-wrap col-2">
                         <ul class="clearfix">
-                            <li class="active-link">İLGİLİ İÇERİKLER</li>
-                            <li>GÜNCEL İÇERİKLER</li>
+                            <li class="active-link">{{__('İLGİLİ İÇERİKLER')}}</li>
+                            <li>{{__('GÜNCEL İÇERİKLER')}}</li>
 
                         </ul>
                     </div>
@@ -122,7 +141,7 @@
                                             class="imgItem" alt="...">
                                         <div class="carousel-caption">
 
-                                            <div class="title">HAKKIMIZDA</div>
+                                            <div class="title">{{__('HAKKIMIZDA')}}</div>
                                         </div>
                                     </a>
                                 </div>
@@ -133,7 +152,7 @@
                                             class="imgItem" alt="...">
                                         <div class="carousel-caption">
 
-                                            <div class="title">YÖNETİM KURULU</div>
+                                            <div class="title">{{__('YÖNETİM KURULU')}}</div>
                                         </div>
                                     </a>
                                 </div>
@@ -144,7 +163,7 @@
                                              alt="...">
                                         <div class="carousel-caption">
 
-                                            <div class="title">İNSAN KAYNAKLARI</div>
+                                            <div class="title">{{__('İNSAN KAYNAKLARI')}}</div>
                                         </div>
                                     </a>
                                 </div>
@@ -167,21 +186,16 @@
 
                 <!-- Processed in 7,0022 ms menu_temp:  -->
                 <ul class="bottom-list" id="zone_10">
-                    <li id="article_40">
-                        <a title="SİTE HARİTASI" href="/tr/site-haritasi"><span>Site Haritası</span></a>
-                    </li>
-                    <li id="article_1308">
-                        <a title="BİLGİ TOPLUMU HİZMETLERİ"
-                           href="https://e-sirket.mkk.com.tr/esir/Dashboard.jsp#/sirketbilgileri/10717" target="_blank"><span>Bilgi Toplumu Hizmetleri</span></a>
-                    </li>
                     <li id="article_38">
-                        <a title="KULLANIM KOŞULLARI" href="/tr/kullanim-kosullari"><span>Kullanım Koşulları</span></a>
+                        <a title="KULLANIM KOŞULLARI"
+                           href="/tr/kullanim-kosullari"><span>{{__('Kullanım Koşulları')}}</span></a>
                     </li>
                     <li id="article_1603">
-                        <a title="KİŞİSEL VERİLERİN KORUNMASI" href="/tr/kisisel-verilerin-korunmasi"><span>Kişisel Verilerin Korunması</span></a>
+                        <a title="KİŞİSEL VERİLERİN KORUNMASI"
+                           href="/tr/kisisel-verilerin-korunmasi"><span>{{__('Kişisel Verilerin Korunması')}}</span></a>
                     </li>
                     <li id="article_1639" class="lie">
-                        <a title="ÇEREZ POLİTİKASI" href="/tr/cerez-politikasi"><span>Çerez Politikası</span></a>
+                        <a title="ÇEREZ POLİTİKASI" href="/tr/cerez-politikasi"><span>{{__('Çerez Politikası')}}</span></a>
                     </li>
 
                 </ul>

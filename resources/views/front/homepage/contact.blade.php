@@ -37,7 +37,7 @@
                             {{csrf_field()}}
                             <div class="row form-group">
                                 <div class="col-1-2 form-group">
-                                    <label for="name">Name</label>
+                                    <label for="name">{{__('Name')}}</label>
                                     <input class="form-control" name="name" type="text" required>
                                     @if ($errors->has('name'))
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-1-2 form-group">
-                                    <label for="email">Email</label>
+                                    <label for="email">{{__('Email')}}</label>
                                     <input class="form-control" name="email" type="text" required>
                                     @if ($errors->has('email'))
                                         <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-1-2 form-group">
-                                    <label for="subject">Subject</label>
+                                    <label for="subject">{{__('Subject')}}</label>
                                     <input class="form-control" name="subject" type="text" required>
                                     @if ($errors->has('subject'))
                                         <span class="text-danger">{{ $errors->first('subject') }}</span>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-1-1 form-group">
-                                    <label for="phone">Phone</label>
+                                    <label for="phone">{{__('Phone')}}</label>
                                     <input class="form-control" name="phone" type="number" required>
                                     @if ($errors->has('number'))
                                         <span class="text-danger">{{ $errors->first('number') }}</span>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-1-1 form-group">
-                                    <label for="message">Message</label>
+                                    <label for="message">{{__('Message')}}</label>
                                     <textarea class="form-control" name="message" id="message" required></textarea>
                                     @if ($errors->has('message'))
                                         <span class="text-danger">{{ $errors->first('message') }}</span>
@@ -85,7 +85,7 @@
                                 <div class="col-12">
                                     <button id="btn-contact-send" class="submit" value="Send" type="submit">
                                         <i class="far fa-paper-plane"></i>
-                                        SEND
+                                        {{__('SEND')}}
                                     </button>
                                 </div>
                             </div>
@@ -104,23 +104,18 @@
                 <!-- Processed in 7,0022 ms menu_temp:  -->
                     <ul class="bottom-list" id="zone_10">
                         <li id="article_40">
-                            <a title="SİTE HARİTASI" href="https://www.dogusgrubu.com.tr/tr/site-haritasi"><span>Site Haritası</span></a>
-                        </li>
-                        <li id="article_1308">
-                            <a title="BİLGİ TOPLUMU HİZMETLERİ"
-                               href="https://e-sirket.mkk.com.tr/esir/Dashboard.jsp#/sirketbilgileri/10717"
-                               target="_blank"><span>Bilgi Toplumu Hizmetleri</span></a>
+                            <a title="SİTE HARİTASI" href="https://www.dogusgrubu.com.tr/tr/site-haritasi"><span>{{__('Site Haritası')}}</span></a>
                         </li>
                         <li id="article_38">
                             <a title="KULLANIM KOŞULLARI"
-                               href="https://www.dogusgrubu.com.tr/tr/kullanim-kosullari"><span>Kullanım Koşulları</span></a>
+                               href="https://www.dogusgrubu.com.tr/tr/kullanim-kosullari"><span>{{__('Kullanım Koşulları')}}</span></a>
                         </li>
                         <li id="article_1603">
                             <a title="KİŞİSEL VERİLERİN KORUNMASI"
-                               href="https://www.dogusgrubu.com.tr/tr/kisisel-verilerin-korunmasi"><span>Kişisel Verilerin Korunması</span></a>
+                               href="https://www.dogusgrubu.com.tr/tr/kisisel-verilerin-korunmasi"><span>{{__('Kişisel Verilerin Korunması')}}</span></a>
                         </li>
                         <li id="article_1639" class="lie">
-                            <a title="ÇEREZ POLİTİKASI" href="https://www.dogusgrubu.com.tr/tr/cerez-politikasi"><span>Çerez Politikası</span></a>
+                            <a title="ÇEREZ POLİTİKASI" href="https://www.dogusgrubu.com.tr/tr/cerez-politikasi"><span>{{__('Çerez Politikası')}}</span></a>
                         </li>
 
                     </ul>

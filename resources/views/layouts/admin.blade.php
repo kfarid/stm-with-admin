@@ -30,6 +30,7 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="stylesheet" href="{{asset('dist/css/colorbox.css')}}">
+    @yield('style')
 
 </head>
 

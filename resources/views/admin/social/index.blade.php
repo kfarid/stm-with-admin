@@ -1,6 +1,5 @@
 @extends('layouts.admin')
-@section('title','Panels')
-
+@section('title','Social Media')
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -8,11 +7,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-12">
-                        <h1 class="m-0">All Panels </h1>
+                        <h1 class="m-0">All SocialMedia </h1>
                     </div><!-- /.col -->
                     <div class="col-sm-12">
                         <a class="btn btn-dark btn-sm" role="button"
-                           href="{{route('panel.create')}}">
+                           href="{{route('social.create')}}">
                             <i class="fas fa-plus">
                             </i>
                             Add
@@ -42,9 +41,6 @@
                                 <table class="table table-striped projects">
                                     <thead>
                                     <tr>
-                                        <th style="width: 5%">
-                                            ID
-                                        </th>
                                         <th style="width: 20%">
                                             Name
                                         </th>
@@ -53,25 +49,22 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($panels as $panel)
+                                    @foreach($socialMedia as $social)
                                         <tr>
                                             <td>
-                                                {{$panel->id}}
-                                            </td>
-                                            <td>
-                                                {{$panel->name_en}}
+                                                Social Media
                                             </td>
                                             <td class="project-actions text-right">
                                                 @if(auth()->user()->can('edit'))
                                                     <a class="btn btn-info btn-sm"
-                                                       href="{{route('panel.edit',$panel['id'])}}">
+                                                       href="{{route('social.edit',$social['id'])}}">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Edit
                                                     </a>
                                                 @endif
                                                 @if(auth()->user()->can('delete'))
-                                                    <form action="{{route('panel.destroy',$panel->id)}}"
+                                                    <form action="{{route('social.destroy',$social->id)}}"
                                                           method="post"
                                                           style="display:inline-block;">
                                                         @method('DELETE')
@@ -99,7 +92,4 @@
             </div>
         </section>
     </div>
-
-
-
 @endsection

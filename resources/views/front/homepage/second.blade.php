@@ -1,12 +1,12 @@
 @extends('layouts.front')
-@section('title','')
+@section('title','Second')
 @section('content')
     <article class="sidecontent-inner">
         <div class="topSpace">
             <ul class="breadcrumb">
                 <li><a href="/">{{__('HOME')}}</a></li>
                 @foreach($homes as $home)
-                <li>{{$home->{'title_'.app()->getLocale()} }}</li>
+                <li>{{Str::upper($home->{'title_'.app()->getLocale()}) }}</li>
             </ul>
             <h1>{{strtoupper($home->{'title_'.app()->getLocale()})}}</h1>
             @endforeach

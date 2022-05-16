@@ -35,6 +35,8 @@ Route::middleware(['roles:admin'])->prefix('admin_panel')->group( function () {
     Route::resource('user', \App\Http\Controllers\Admin\UserController::class);
     Route::resource('contact', \App\Http\Controllers\Admin\ContactController::class);
     Route::resource('roles', \App\Http\Controllers\Admin\RoleController::class);
+    Route::resource('social', \App\Http\Controllers\Admin\SocialMediaController::class);
+    Route::resource('google', \App\Http\Controllers\Admin\GoogleController::class);
 });
 
 /*

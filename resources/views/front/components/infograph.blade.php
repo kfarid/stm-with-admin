@@ -4,14 +4,14 @@
             <div class="col-in">
                 <i class="i-s1"></i>
                 <p class="count" data-count="3"><span>6</span></p>
-                <p class="h3">SECTORS</p>
+                <p class="h3">{{__('SECTORS')}}</p>
             </div>
         </div>
         <div class="col-1-3">
             <div class="col-in">
                 <i class="i-s2"></i>
                 <p class="count" data-count="10"><span>10</span></p>
-                <p class="h3">INVESTMENTS</p>
+                <p class="h3">{{__('INVESTMENTS')}}</p>
             </div>
         </div>
         <div class="col-1-3">

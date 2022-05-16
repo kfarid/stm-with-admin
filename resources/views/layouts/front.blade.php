@@ -10,7 +10,13 @@
     <!--<link rel="canonical" href=""/>-->
     <meta charset="utf-8"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+@foreach($googles as $google)
+    {{$google->analytics_link}}
+    {!! $google->analytics_script!!}
+    {!! $google->search_script!!}
+    {{$google->tag_link}}
+    {!! $google->tag_script_head!!}
+@endforeach
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8"/>
@@ -36,7 +42,7 @@
     <link href={{asset('Content/assets/css/plugins_min.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick-theme.css')}} rel="stylesheet"/>
-    <link href={{asset('Content/assets/css/main.css')}} rel="stylesheet"/>
+    <link href={{asset('Content/assets/css/main-dark.css')}} rel="stylesheet"/>
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
@@ -87,7 +93,7 @@
         }
 
         h1 {
-            color: #1c1c1c;
+           /* color: #1c1c1c;*/
             text-decoration: none !important;
         }
 
@@ -102,10 +108,14 @@
 </head>
 
 <body >
+@foreach($googles as $google)
+    {!! $google->tag_script_body!!}
+@endforeach
 
 <div class="st-container" id="indexPage">
 
     <x-header></x-header>
+
     <x-frontsidebar></x-frontsidebar>
     <section class="st-pusher">
         <div class="st-content">

@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\SocialMedia;
 use Illuminate\View\Component;
 
 class footer extends Component
@@ -23,6 +24,7 @@ class footer extends Component
      */
     public function render()
     {
-        return view('front.components.footer');
+        $socialMedia = SocialMedia::all();
+        return view('front.components.footer',compact('socialMedia'));
     }
 }

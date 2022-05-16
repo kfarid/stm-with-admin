@@ -160,6 +160,29 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-share-alt"></i>
+                        <p>
+                            Social Network
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('social.index')}}" class="nav-link">
+                                <i class="fas fa-eye nav-icon"></i>
+                                <p>All Social</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('social.create')}}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Add Social</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Users
@@ -220,98 +243,64 @@
                         </p>
                     </a>
                 </li>
-                {{--<li class="nav-item">
+                <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Pages
+                            Users
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/examples/invoice.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Invoice</p>
+                            <a href="{{route('user.index')}}" class="nav-link">
+                                <i class="fas fa-eye nav-icon"></i>
+                                <p>All Users</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/examples/profile.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Profile</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/e-commerce.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>E-commerce</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/projects.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Projects</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/project-add.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Project Add</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/project-edit.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Project Edit</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/project-detail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Project Detail</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/contacts.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Contacts</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/faq.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>FAQ</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/contact-us.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Contact us</p>
+                            <a href="{{route('user.create')}}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Add Users</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-circle text-danger"></i>
-                        <p class="text">Important</p>
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Setting
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nac-icon fab fa-google"></i>
+                                <p>
+                                    Google
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: block;">
+                                <li class="nav-item">
+                                    <a href="{{route('google.index')}}" class="nav-link">
+                                        <i class="fas fa-eye nav-icon"></i>
+                                        <p>All Google Setting</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('google.create')}}" class="nav-link">
+                                        <i class="fas fa-plus nav-icon"></i>
+                                        <p>Add Google Setting</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-circle text-warning"></i>
-                        <p>Warning</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-circle text-info"></i>
-                        <p>Informational</p>
-                    </a>
-                </li>--}}
             </ul>
         </nav>
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>

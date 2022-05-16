@@ -2,21 +2,18 @@
     <ul id="zone_8">
         @foreach($links as $link)
         <li id="article_2">
-            <a title="{{$link->title_en}}" href="{{route('second',$link->id)}}"><span>{{$link->title_en}}</span></a>
+            <a title="{{$link->{'title_'.app()->getLocale()} }}" href="{{route('second',$link->id)}}"><span>{{Str::upper($link->{'title_'.app()->getLocale()}) }}</span></a>
         </li>
         @endforeach
         <li id="article_2">
-            <a title="KURUMSAL SORUMLULUK" href=""><span>KURUMSAL SORUMLULUK</span></a>
-        </li>
-        <li id="article_2">
             <a title="&#304;LET&#304;&#350;&#304;M"
-               href="{{route('contact')}}"><span>CONTACT US</span></a>
+               href="{{route('contact')}}"><span>{{__('CONTACT US')}}</span></a>
         </li>
     </ul>
     <!-- Processed in 16,0012 ms menu_temp:  -->
 </nav>
 
-<nav class="sidenav nav-daily filter-action">
+{{--<nav class="sidenav nav-daily filter-action">
     <ul>
         <li class="all active">
             <div class="link-wrap"><span>TÜMÜ</span></div>
@@ -44,4 +41,4 @@
             <div class="link-wrap"><span>DİĞER</span></div>
         </li>
     </ul>
-</nav>
+</nav>--}}

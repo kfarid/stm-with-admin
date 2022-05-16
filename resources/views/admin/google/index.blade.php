@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Panels')
+@section('title','Google Setting')
 
 @section('content')
     <div class="content-wrapper">
@@ -7,12 +7,12 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-12">
-                        <h1 class="m-0">All Panels </h1>
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Google Setting</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-12">
                         <a class="btn btn-dark btn-sm" role="button"
-                           href="{{route('panel.create')}}">
+                           href="{{route('google.create')}}">
                             <i class="fas fa-plus">
                             </i>
                             Add
@@ -45,7 +45,7 @@
                                         <th style="width: 5%">
                                             ID
                                         </th>
-                                        <th style="width: 20%">
+                                        <th style="width: 25%">
                                             Name
                                         </th>
                                         <th style="width: 40%">
@@ -53,25 +53,25 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($panels as $panel)
+                                    @foreach($googles as $google)
                                         <tr>
                                             <td>
-                                                {{$panel->id}}
+                                                {{$google->id}}
                                             </td>
                                             <td>
-                                                {{$panel->name_en}}
+                                                Google Analytics, Tag, Search Setting
                                             </td>
                                             <td class="project-actions text-right">
                                                 @if(auth()->user()->can('edit'))
                                                     <a class="btn btn-info btn-sm"
-                                                       href="{{route('panel.edit',$panel['id'])}}">
+                                                       href="{{route('google.edit',$google['id'])}}">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Edit
                                                     </a>
                                                 @endif
                                                 @if(auth()->user()->can('delete'))
-                                                    <form action="{{route('panel.destroy',$panel->id)}}"
+                                                    <form action="{{route('google.destroy',$google->id)}}"
                                                           method="post"
                                                           style="display:inline-block;">
                                                         @method('DELETE')
@@ -99,7 +99,5 @@
             </div>
         </section>
     </div>
-
-
 
 @endsection

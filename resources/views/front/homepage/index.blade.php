@@ -1,7 +1,6 @@
 @extends('layouts.front')
 @section('title','Home')
 @section('content')
-
     <x-infograph></x-infograph>
     <article class="sidecontent-inner">
         <div class="boxGridWrapper clearfix boxWrapper indexContent">
@@ -26,7 +25,7 @@
                     </div>
                     <div class="item-detail">
                         <div class="group">STM</div>
-                        <div class="title">{{$home->{'title_'.app()->getLocale()} }}</div>
+                        <div class="title">{{Str::upper($home->{'title_'.app()->getLocale()}) }}</div>
                     </div>
                 </a>
             </div>

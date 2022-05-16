@@ -143,9 +143,9 @@
 
 
     <div class="search-wrap">
-        <form class="morphsearch-form" action="Search/Index " method="post">
-            <input class="morphsearch-input" name="x" placeholder="Aranacak Kelime ..." type="text">
-            <button class="morphsearch-submit" type="submit">ARA</button>
+        <form class="morphsearch-form" action="{{route('search')}}" method="get">
+            <input class="morphsearch-input" name="x" placeholder="{{__('Search')}} ..." type="text">
+            <button class="morphsearch-submit" type="submit">{{__('SEARCH')}}</button>
         </form>
     </div>
     <div class="overlay"></div>

@@ -51,6 +51,7 @@ Route::controller(['Localization'])->prefix('/')->group(function (){
     Route::get('/',[\App\Http\Controllers\FrontController::class,'index'])->name('index');
     Route::get('second/{slug_en}',[\App\Http\Controllers\FrontController::class,'second'])->name('second');
     Route::get('third/{slug_en}',[\App\Http\Controllers\FrontController::class,'third'])->name('third');
+    Route::get('search',[\App\Http\Controllers\SearchController::class,'search'])->name('search');
     Route::get('contact',[ContactController::class,'contact'])->name('contact');
     Route::post('contact',[ContactController::class,'storeContact'])->name('contact.store');
 });

@@ -2,11 +2,11 @@
     <a href="/" class="logo">
         <h1>STM</h1>
     </a>
-    {{--<a href="/" class="logo1">
-        <span style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+    <a href="/" class="logo1">
+        <div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
             <img src="/Content/assets/img/icons-plus.jpg" class="logo1">
-        </span>
-    </a>--}}
+        </div>
+    </a>
     <ul>
         @php $locale = session()->get('locale'); @endphp
         <li class="lang dropdown">

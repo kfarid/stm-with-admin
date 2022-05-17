@@ -18,23 +18,19 @@
             </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
                 <!-- Add icons to the links using the .nav-icon class
        with font-awesome or any other icon font library -->
+                {{--<li class="nav-item">
+                    <a href="{{route('adminsearch')}}" class="nav-link">
+                        <i class="nav-icon fas fa-search"></i>
+                        <p>
+                            Search
+                        </p>
+                    </a>
+                </li>--}}
                 <li class="nav-item">
                     <a href="{{route('homeAdmin')}}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -227,14 +223,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                {{--<li class="nav-item">
                     <a href="pages/gallery.html" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Gallery
                         </p>
                     </a>
-                </li>
+                </li>--}}
                 <li class="nav-item">
                     <a href="{{route('contact.index')}}" class="nav-link">
                         <i class="nav-icon far fa-envelope"></i>
@@ -274,6 +270,17 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <li class="nav-item">
+                            <a href="{{route('setting.index')}}" class="nav-link">
+                                <i class="nac-icon fas fa-cog"></i>
+                                <p>
+                                    Basic Setting
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+
                     <ul class="nav nav-treeview" style="display: block;">
                         <li class="nav-item">
                             <a href="#" class="nav-link">

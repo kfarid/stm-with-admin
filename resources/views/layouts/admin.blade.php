@@ -52,7 +52,7 @@
     <x-sidebar></x-sidebar>
 
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021.</strong> All rights reserved.
+        <strong>Copyright &copy; 2022.</strong> All rights reserved.
     </footer>
 
     <!-- Control Sidebar -->

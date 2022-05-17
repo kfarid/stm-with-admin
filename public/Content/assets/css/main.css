@@ -323,14 +323,19 @@ header {
     transition: background 0.5s;
 }
 
-/*header .logo { width: 150px; height: 48px; background: url(../img/logo.png) no-repeat center; display: block; float: left; margin: 17px 0 15px 50px;*/
+header .logo1 {
+    width: 150px;
+    height: 50px;
+    display: block;
+    float: left;
+    margin: 7px 0 15px 50px;
+}
 header .logo {
     width: 150px;
     height: 48px;
-    background: url(../img/logo_siyah_new.png) no-repeat center;
     display: block;
     float: left;
-    margin: 17px 0 15px 50px;
+    margin: 17px -150px 15px 50px;
     -webkit-background-size: 150px auto;
     background-size: 150px auto;
 }

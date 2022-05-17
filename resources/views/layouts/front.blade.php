@@ -19,7 +19,6 @@
 @endforeach
 
     <!-- Basic Page Needs -->
-    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible " content="IE=11">
     <meta name="viewport " content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,10 +38,10 @@
     <!-- Styles -->
     <link href={{asset('Content/assets/css/Carousel.css')}} rel="stylesheet">
     <link href={{asset('Content/assets/css/font-awesome.min.css')}} rel="stylesheet">
-    <link href="/Content/assets/css/plugins_min.css" rel="stylesheet"/>
+    <link href={{asset('Content/assets/css/plugins_min.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick-theme.css')}} rel="stylesheet"/>
-    <link href="{{__('/Content/assets/css/main.css')}}" rel="stylesheet"/>
+    <link href={{asset('Content/assets/css/main.css')}} rel="stylesheet"/>
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>

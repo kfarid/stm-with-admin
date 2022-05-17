@@ -27,13 +27,13 @@
                         <h1>{{__('SEARCH RESULT')}}</h1>
                         <!-- Article #1 -->
                         <form class="search-form" action="{{ route('search') }}" method="GET">
-                            <input class="search-input" name="seacrh" placeholder="{{__('Search')}} ..." type="text">
+                            <input class="search-input" name="search" placeholder="{{__('Search')}} ..." type="text">
                             <button class="search-submit" type="submit"></button>
                         </form>
                         <br>
                         @if($seconds->isNotEmpty())
                                 @foreach ($seconds as $second)
-                                    <div class="search-result-list">
+                                <div class="search-result-list">
                                         <div class="item">
                                             <a href="{{route('third',['slug_en'=>$second['slug_en']])}}">
                                                 <p class="title">{{ $second->{('title_'.app()->getLocale())} }}</p>

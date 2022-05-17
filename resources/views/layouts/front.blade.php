@@ -42,7 +42,7 @@
     <link href="/Content/assets/css/plugins_min.css" rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick-theme.css')}} rel="stylesheet"/>
-    <link href="/Content/assets/css/main.css" rel="stylesheet"/>
+    <link href="{{__('/Content/assets/css/main.css')}}" rel="stylesheet"/>
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
@@ -144,7 +144,7 @@
 
     <div class="search-wrap">
         <form class="morphsearch-form" action="{{route('search')}}" method="get">
-            <input class="morphsearch-input" name="x" placeholder="{{__('Search')}} ..." type="text">
+            <input class="morphsearch-input" name="search" placeholder="{{__('Search')}} ..." type="text">
             <button class="morphsearch-submit" type="submit">{{__('SEARCH')}}</button>
         </form>
     </div>

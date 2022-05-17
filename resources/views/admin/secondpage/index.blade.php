@@ -12,7 +12,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-12">
                         <a class="btn btn-dark btn-sm" role="button"
-                           href="{{route('secondpage.create')}}">
+                           href="{{route('setting.create')}}">
                             <i class="fas fa-plus">
                             </i>
                             Add
@@ -104,10 +104,6 @@
                 </div>
             </div>
         </section>
-    </div>
-    <!-- /.container-fluid -->
-    </section>
-
     </div>
 
 @endsection

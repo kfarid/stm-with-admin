@@ -3,11 +3,13 @@
 <head>
 
     <title>@yield('title')</title>
+    @foreach($settings as $setting)
     <meta name="DESCRIPTION"
-          content="Doğuş Grubu, Türkiye'nin önde gelen grupları arasında yer almakta ve küresel bir oyuncu olma yolunda emin adımlarla ilerlemektedir."/>
+          content="{{$setting->description}}"/>
     <meta name="KEYWORDS"
-          content="Gayrimenkul, Turizm, Restorasyon, Konut, Otel, Mix-used, Gayreimenkul geliştime, konut geliştirme, proje geliştirme, karma projeler"/>
-    <!--<link rel="canonical" href=""/>-->
+          content="{{$setting->keywords}}"/>
+    <link rel="icon" type="image/x-icon" href="{{$setting->favicon}}">
+    @endforeach
     <meta charset="utf-8"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @foreach($googles as $google)

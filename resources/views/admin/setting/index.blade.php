@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-12">
-                        <h1 class="m-0">All Post </h1>
+                        <h1 class="m-0">Basic Setting</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-12">
                         <a class="btn btn-dark btn-sm" role="button"
@@ -47,9 +47,6 @@
                                         <th style="width: 25%">
                                             Name
                                         </th>
-                                        <th style="width: 25%">
-                                            Parent Category
-                                        </th>
                                         <th style="width: 40%">
                                         </th>
                                     </tr>
@@ -61,19 +58,19 @@
                                                 {{$setting->id}}
                                             </td>
                                             <td>
-                                                {{__('Basic Setting')}}
+                                                Basic Setting
                                             </td>
                                             <td class="project-actions text-right">
                                                 @if(auth()->user()->can('edit'))
                                                     <a class="btn btn-info btn-sm"
-                                                       href="{{route('setting.edit',$second['id'])}}">
+                                                       href="{{route('setting.edit',$setting['id'])}}">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Edit
                                                     </a>
                                                 @endif
                                                 @if(auth()->user()->can('delete'))
-                                                    <form action="{{route('setting.destroy',$second->id)}}"
+                                                    <form action="{{route('setting.destroy',$setting->id)}}"
                                                           method="post"
                                                           style="display:inline-block;">
                                                         @method('DELETE')

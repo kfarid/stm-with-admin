@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\BasicSetting;
 use Illuminate\View\Component;
 
 class header extends Component
@@ -23,6 +24,7 @@ class header extends Component
      */
     public function render()
     {
-        return view('front.components.header');
+        $settings = BasicSetting::all();
+        return view('front.components.header',compact('settings'));
     }
 }

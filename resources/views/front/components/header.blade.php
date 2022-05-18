@@ -1,12 +1,17 @@
 <header>
+    @foreach($settings as $setting)
+        @if($setting->logotext != null)
     <a href="/" class="logo">
-        <h1>STM</h1>
+        <h1>{{$setting->logotext}}</h1>
     </a>
+        @else
     <a href="/" class="logo1">
         <div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-            <img src="/Content/assets/img/icons-plus.jpg" class="logo1">
+            <img src="{{$setting->logo}}" class="logo1">
         </div>
     </a>
+        @endif
+    @endforeach
     <ul>
         @php $locale = session()->get('locale'); @endphp
         <li class="lang dropdown">

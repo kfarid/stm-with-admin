@@ -37,9 +37,13 @@ class BasicSettingController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-
-        BasicSetting::create($input);
+        $basicSetting = new BasicSetting();
+        $basicSetting->description = $request->description;
+        $basicSetting->keywords = $request->keywords;
+        $basicSetting->logotext = $request->logotext;
+        $basicSetting->logo = $request->logo;
+        $basicSetting->favicon = $request->favicon;
+        $basicSetting->save();
         return redirect()->route('setting.index')->withSuccess('Perfectly Added');
 
     }
@@ -58,29 +62,30 @@ class BasicSettingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BasicSetting  $basicSetting
+     * @param  \App\Models\BasicSetting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function edit(BasicSetting $basicSetting)
+    public function edit(BasicSetting $setting)
     {
-        return view('admin.setting.edit',compact('basicSetting'));
+        return view('admin.setting.edit',compact('setting'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BasicSetting  $basicSetting
+     * @param  \App\Models\BasicSetting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BasicSetting $basicSetting)
+    public function update(Request $request, BasicSetting $setting)
     {
-        $basicSetting->description = $request->description;
-        $basicSetting->keywords = $request->keywords;
-        $basicSetting->logotext = $request->logotext;
-        $basicSetting->logo = $request->logo;
-        $basicSetting->favicon = $request->favicon;
-        $basicSetting->update();
+
+        $setting->description = $request->description;
+        $setting->keywords = $request->keywords;
+        $setting->logotext = $request->logotext;
+        $setting->logo = $request->logo;
+        $setting->favicon = $request->favicon;
+        $setting->update();
         return redirect()->route('setting.index')->withSuccess('Perfectly Updated');
 
     }
@@ -88,12 +93,12 @@ class BasicSettingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BasicSetting  $basicSetting
+     * @param  \App\Models\BasicSetting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BasicSetting $basicSetting)
+    public function destroy(BasicSetting $setting)
     {
-        $basicSetting->delete();
+        $setting->delete();
         return redirect()->route('setting.index')->withSuccess('Perfectly Delete');
     }
 }

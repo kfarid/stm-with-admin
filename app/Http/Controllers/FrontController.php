@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BasicSetting;
 use App\Models\Card;
 use App\Models\Google;
 use App\Models\HomePage;
@@ -19,7 +20,8 @@ class FrontController extends Controller
 
         $homes = HomePage::all();
         $googles = Google::all();
-        return view('front.homepage.index', compact('homes','googles'));
+        $settings = BasicSetting::all();
+        return view('front.homepage.index', compact('homes','googles','settings'));
     }
 
     /**
@@ -31,7 +33,8 @@ class FrontController extends Controller
         $homes = HomePage::where('slug_en',$slug_en)->get();
         $googles = Google::all();
         $seconds = SecondPage::where('home_slug', $slug_en)->get();
-        return view('front.homepage.second', compact('seconds','homes','googles'));
+        $settings = BasicSetting::all();
+        return view('front.homepage.second', compact('seconds','homes','googles','settings'));
     }
 
     /**
@@ -45,6 +48,7 @@ class FrontController extends Controller
         $thirds = ThirdPage::where('second_slug', $slug_en)->get();
         $panels = Panel::orderBy('created_at',"DESC")->get();
         $cards = Card::orderBy('created_at',"DESC")->get();
-        return view('front.homepage.third', compact('seconds','thirds','panels','cards','googles'));
+        $settings = BasicSetting::all();
+        return view('front.homepage.third', compact('seconds','thirds','panels','cards','googles','settings'));
     }
 }

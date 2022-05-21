@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\HomePage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\HomePage>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SecondPage>
  */
-class HomePageFactory extends Factory
+class SecondPageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,6 +22,7 @@ class HomePageFactory extends Factory
             'title_az' => $this->faker->name(),
             'title_ru' => $this->faker->name(),
             'title_tr' => $this->faker->name(),
+            'home_slug' => HomePage::factory()->create(),
             'img' => $this->faker->imageUrl(900, 620),
             'created_at' => now(),
         ];

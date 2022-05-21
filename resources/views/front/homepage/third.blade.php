@@ -38,10 +38,11 @@
                         <div class="panel-group" id="accordion">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <div data-parent="#accordion" data-target="#collapse1" data-toggle="collapse">
+                                    <div data-parent="#accordion" data-target="#collapse{{$panel->id}}"
+                                         data-toggle="collapse">
                                         {{$panel->{'name_'.app()->getLocale()} }}</div>
                                 </div>
-                                <div class="panel-collapse collapse" id="collapse1">
+                                <div class="panel-collapse collapse" id="collapse{{$panel->id}}">
                                     <div class="inner">
                                         <p>{!! $panel->{'text_'.app()->getLocale()} !!}</p>
                                     </div>
@@ -53,9 +54,9 @@
                     @endif
                 @endforeach
 
-                @foreach($cards as $card)
-                    @if($third->id == $card->third_id)
-                        <div class="image-list clearfix withinfo column-c1">
+                <div class="image-list clearfix withinfo">
+                    @foreach($cards as $card)
+                        @if($third->id == $card->third_id)
                             <div class="colon-2">
                                 <div class="col-inner">
                                     <figure>
@@ -97,11 +98,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @else
-                        <br>
-                    @endif
-                @endforeach
+                        @else
+                            <br>
+                        @endif
+                    @endforeach
+                </div>
 
             @endforeach
             <br>

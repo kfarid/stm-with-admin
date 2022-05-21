@@ -49,6 +49,14 @@
                                                id="exampleInputEmail1"
                                                placeholder="Enter password" required>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect2">Role</label>
+                                        <select name="role_id" class="form-control" id="exampleFormControlSelect2">
+                                            @foreach($roles as $role)
+                                                <option value="{{$role['id']}}">{{$role['name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary">Submit</button>

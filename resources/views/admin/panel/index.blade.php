@@ -10,6 +10,7 @@
                     <div class="col-sm-12">
                         <h1 class="m-0">All Panels </h1>
                     </div><!-- /.col -->
+                    @if(auth()->user()->can('add'))
                     <div class="col-sm-12">
                         <a class="btn btn-dark btn-sm" role="button"
                            href="{{route('panel.create')}}">
@@ -18,6 +19,7 @@
                             Add
                         </a>
                     </div>
+                    @endif
                 </div><!-- /.row -->
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">

@@ -17,15 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/login', 'login');
-Route::get('home',function () {
-    return view('home');
-});
+
 
 Auth::routes();
 
 
 
-Route::middleware(['roles:admin'])->prefix('admin_panel')->group( function () {
+Route::prefix('admin_panel')->group( function () {
     Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('homeAdmin');
     Route::resource('homepage', \App\Http\Controllers\Admin\HomePageController::class);
     Route::resource('secondpage', \App\Http\Controllers\Admin\SecondController::class);
@@ -38,6 +36,7 @@ Route::middleware(['roles:admin'])->prefix('admin_panel')->group( function () {
     Route::resource('social', \App\Http\Controllers\Admin\SocialMediaController::class);
     Route::resource('google', \App\Http\Controllers\Admin\GoogleController::class);
     Route::resource('setting', \App\Http\Controllers\Admin\BasicSettingController::class);
+    Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class);
     Route::get('adminsearch', [\App\Http\Controllers\Admin\SearchController::class,'search'])->name('adminsearch');
 });
 

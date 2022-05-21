@@ -9,7 +9,8 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">All Post </h1>
-                    </div><!-- /.col -->
+                    </div>
+                    @if(auth()->user()->can('add'))
                     <div class="col-sm-12">
                         <a class="btn btn-dark btn-sm" role="button"
                            href="{{route('thirdpage.create')}}">
@@ -18,6 +19,7 @@
                             Add
                         </a>
                     </div>
+                    @endif
                 </div><!-- /.row -->
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">

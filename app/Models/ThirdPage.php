@@ -32,6 +32,11 @@ class ThirdPage extends Model
         'textarea_tr'
     ];
 
+    public function storeslider()
+    {
+        return $this->hasMany(Slider::class);
+    }
+
 
     public function secondpage()
     {

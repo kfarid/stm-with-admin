@@ -70,8 +70,8 @@
                                                 </li>
                                                 <li class="email">
                                                     <a href="mailto:{{$card->email}}">
-                                                    <i class="fa-solid fa-envelope"></i>
-                                                    {{$card->email}}
+                                                        <i class="fa-solid fa-envelope"></i>
+                                                        {{$card->email}}
                                                     </a>
                                                 </li>
                                                 <li class="phone">
@@ -121,86 +121,26 @@
 
                         </ul>
                     </div>
-                    <div class="tab-content-wrap">
-                        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" data-interval="3000">
+                    <x-slider></x-slider>
 
-                                    <a href="{{route('index')}}">
-                                        <img src="{{asset('DogusGrubu_files/2020112411485660_2_1_sahne1.gif')}}"
-                                             class="d-block w-100" alt="...">
-                                        <div class="carousel-caption">
-                                            <div class="title">{{__('STM TANIYIN')}}</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="carousel-item" data-interval="6000">
-                                    <a href="">
-                                        <img
-                                            src="{{asset('DogusGrubu_files/20201124115147825_9_1_645x450_hakkimizda.jpg')}}"
-                                            class="imgItem" alt="...">
-                                        <div class="carousel-caption">
 
-                                            <div class="title">{{__('HAKKIMIZDA')}}</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="carousel-item" data-interval="9000">
-                                    <a href="">
-                                        <img
-                                            src="{{asset('DogusGrubu_files/20201124115229830_4_1_645x450_yonetim_kurulu.jpg')}}"
-                                            class="imgItem" alt="...">
-                                        <div class="carousel-caption">
+                    <!-- Processed in 7,0022 ms menu_temp:  -->
+                    <ul class="bottom-list" id="zone_10">
+                        <li id="article_38">
+                            <a title="KULLANIM KOŞULLARI"
+                               href="kullanim-kosullari"><span>{{__('Kullanım Koşulları')}}</span></a>
+                        </li>
+                        <li id="article_1603">
+                            <a title="KİŞİSEL VERİLERİN KORUNMASI"
+                               href="kisisel-verilerin-korunmasi"><span>{{__('Kişisel Verilerin Korunması')}}</span></a>
+                        </li>
+                        <li id="article_1639" class="lie">
+                            <a title="ÇEREZ POLİTİKASI" href="cerez-politikasi"><span>{{__('Çerez Politikası')}}</span></a>
+                        </li>
 
-                                            <div class="title">{{__('YÖNETİM KURULU')}}</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="carousel-item" data-interval="12000">
-                                    <a href="">
-                                        <img src="{{asset('DogusGrubu_files/202011241153080_2_1_sahne1.gif')}}"
-                                             class="imgItem"
-                                             alt="...">
-                                        <div class="carousel-caption">
+                    </ul>
 
-                                            <div class="title">{{__('İNSAN KAYNAKLARI')}}</div>
-                                        </div>
-                                    </a>
-                                </div>
-
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button"
-                               data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleInterval" role="button"
-                               data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden"></span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
-
-
-                <!-- Processed in 7,0022 ms menu_temp:  -->
-                <ul class="bottom-list" id="zone_10">
-                    <li id="article_38">
-                        <a title="KULLANIM KOŞULLARI"
-                           href="/tr/kullanim-kosullari"><span>{{__('Kullanım Koşulları')}}</span></a>
-                    </li>
-                    <li id="article_1603">
-                        <a title="KİŞİSEL VERİLERİN KORUNMASI"
-                           href="/tr/kisisel-verilerin-korunmasi"><span>{{__('Kişisel Verilerin Korunması')}}</span></a>
-                    </li>
-                    <li id="article_1639" class="lie">
-                        <a title="ÇEREZ POLİTİKASI" href="/tr/cerez-politikasi"><span>{{__('Çerez Politikası')}}</span></a>
-                    </li>
-
-                </ul>
-
             </div>
         </div>
-    </div>
 @endsection

@@ -10,6 +10,7 @@
                     <div class="col-sm-12">
                         <h1 class="m-0">All Post </h1>
                     </div>
+                    @if(auth()->user()->can('add'))
                     <div class="col-sm-12">
                         <a class="btn btn-dark btn-sm" role="button"
                            href="{{route('homepage.create')}}">
@@ -17,7 +18,8 @@
                             </i>
                             Add
                         </a>
-                    </div><!-- /.col -->
+                    </div>
+                    @endif
                 </div><!-- /.row -->
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">

@@ -9,15 +9,17 @@
                 <div class="row mb-2">
                     <div class="col-sm-12">
                         <h1 class="m-0">All Post </h1>
-                    </div><!-- /.col -->
+                    </div>
+                    @if(auth()->user()->can('add'))
                     <div class="col-sm-12">
                         <a class="btn btn-dark btn-sm" role="button"
-                           href="{{route('setting.create')}}">
+                           href="{{route('secondpage.create')}}">
                             <i class="fas fa-plus">
                             </i>
                             Add
                         </a>
                     </div>
+                    @endif
                 </div><!-- /.row -->
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">

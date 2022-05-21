@@ -28,10 +28,10 @@ class LoginController extends Controller
      */
     protected function redirectTo()
     {
-        if (auth()->user()->hasRole('admin')) {
-            return '/admin_panel';
+        if (auth()->user()->hasRole('user')) {
+            return '/';
         }
-        return '/';
+        return '/admin_panel';
     }
 
     /**

@@ -54,12 +54,14 @@
                                 <p>All Page</p>
                             </a>
                         </li>
+                        @if(auth()->user()->can('add'))
                         <li class="nav-item">
                             <a href="{{route('homepage.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Page</p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -77,12 +79,14 @@
                                 <p>All Page</p>
                             </a>
                         </li>
+                        @if(auth()->user()->can('add'))
                         <li class="nav-item">
                             <a href="{{route('secondpage.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Page</p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -100,12 +104,39 @@
                                 <p>All Page</p>
                             </a>
                         </li>
+                        @if(auth()->user()->can('add'))
                         <li class="nav-item">
                             <a href="{{route('thirdpage.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Page</p>
                             </a>
                         </li>
+                        @endif
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-sliders-h"></i>
+                        <p>
+                            Slider
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('slider.index')}}" class="nav-link">
+                                <i class="fas fa-eye nav-icon"></i>
+                                <p>All Slider</p>
+                            </a>
+                        </li>
+                        @if(auth()->user()->can('add'))
+                        <li class="nav-item">
+                            <a href="{{route('slider.create')}}" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Add Slider</p>
+                            </a>
+                        </li>
+                        @endif
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -123,12 +154,14 @@
                                 <p>All Panel</p>
                             </a>
                         </li>
+                        @if(auth()->user()->can('add'))
                         <li class="nav-item">
                             <a href="{{route('panel.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Panel</p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -146,12 +179,14 @@
                                 <p>All Cards</p>
                             </a>
                         </li>
+                        @if(auth()->user()->can('add'))
                         <li class="nav-item">
                             <a href="{{route('card.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Cards</p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -169,14 +204,17 @@
                                 <p>All Social</p>
                             </a>
                         </li>
+                        @if(auth()->user()->can('add'))
                         <li class="nav-item">
                             <a href="{{route('social.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Social</p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </li>
+                @role('admin')
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
@@ -192,12 +230,14 @@
                                 <p>All Users</p>
                             </a>
                         </li>
+                        @if(auth()->user()->can('add'))
                         <li class="nav-item">
                             <a href="{{route('user.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Users</p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -215,14 +255,17 @@
                                 <p>All Permissions</p>
                             </a>
                         </li>
+                        @if(auth()->user()->can('add'))
                         <li class="nav-item">
                             <a href="{{route('roles.create')}}" class="nav-link">
                                 <i class="fas fa-plus nav-icon"></i>
                                 <p>Add Permissions</p>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </li>
+                @endrole
                 {{--<li class="nav-item">
                     <a href="pages/gallery.html" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
@@ -238,29 +281,6 @@
                             Mailbox
                         </p>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            Users
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('user.index')}}" class="nav-link">
-                                <i class="fas fa-eye nav-icon"></i>
-                                <p>All Users</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('user.create')}}" class="nav-link">
-                                <i class="fas fa-plus nav-icon"></i>
-                                <p>Add Users</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">

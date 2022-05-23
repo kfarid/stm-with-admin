@@ -22,7 +22,7 @@ class SecondPageFactory extends Factory
             'title_az' => $this->faker->name(),
             'title_ru' => $this->faker->name(),
             'title_tr' => $this->faker->name(),
-            'home_slug' => HomePage::factory()->create(),
+            'home_slug' =>HomePage::factory()->create(),
             'img' => $this->faker->imageUrl(900, 620),
             'created_at' => now(),
         ];

@@ -11,14 +11,14 @@
                         <h1 class="m-0">All Post </h1>
                     </div>
                     @if(auth()->user()->can('add'))
-                    <div class="col-sm-12">
-                        <a class="btn btn-dark btn-sm" role="button"
-                           href="{{route('homepage.create')}}">
-                            <i class="fas fa-plus">
-                            </i>
-                            Add
-                        </a>
-                    </div>
+                        <div class="col-sm-12">
+                            <a class="btn btn-dark btn-sm" role="button"
+                               href="{{route('homepage.create')}}">
+                                <i class="fas fa-plus">
+                                </i>
+                                Add
+                            </a>
+                        </div>
                     @endif
                 </div><!-- /.row -->
                 @if (session('success'))
@@ -37,60 +37,68 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <section class="col-lg-12">
-
                         <!-- Default box -->
-                        <div class="card">
+                        <div class="card card-gray-dark">
+                            <div class="card-header">
+                                <h3 class="card-title">Home Page List</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
                             <div class="card-body p-0">
-                                <table class="table table-striped projects">
-                                    <thead>
-                                    <tr>
-                                        <th style="width: 5%">
-                                            ID
-                                        </th>
-                                        <th style="width: 25%">
-                                            Name
-                                        </th>
-                                        <th style="width: 40%">
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($homePage as $homes)
+                                    <table class="table table-striped projects dataTable" id="example2" aria-describedby="example2_info">
+                                        <thead>
                                         <tr>
-                                            <td>
-                                                {{$homes->id}}
-                                            </td>
-                                            <td>
-                                                {{$homes->title_en}}
-                                            </td>
-                                            <td class="project-actions text-right">
-                                                @if(auth()->user()->can('edit'))
-                                                    <a class="btn btn-info btn-sm"
-                                                       href="{{route('homepage.edit',$homes['id'])}}">
-                                                        <i class="fas fa-pencil-alt">
-                                                        </i>
-                                                        Edit
-                                                    </a>
-                                                @endif
-                                                @if(auth()->user()->can('delete'))
-                                                    <form action="{{route('homepage.destroy',$homes->id)}}"
-                                                          method="post"
-                                                          style="display:inline-block;">
-                                                        @method('DELETE')
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-danger btn-sm delete-btn">
-                                                            <i class="fas fa-trash">
-                                                            </i>
-                                                            Delete
-                                                        </button>
-                                                    </form>
-                                                @endif
-                                            </td>
+                                            <th style="width: 5%">
+                                                ID
+                                            </th>
+                                            <th style="width: 25%">
+                                                Name
+                                            </th>
+                                            <th style="width: 40%">
+                                            </th>
                                         </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($homePage as $homes)
+                                            <tr>
+                                                <td>
+                                                    {{$homes->id}}
+                                                </td>
+                                                <td>
+                                                    {{$homes->title_en}}
+                                                </td>
+                                                <td class="project-actions text-right">
+                                                    @if(auth()->user()->can('edit'))
+                                                        <a class="btn btn-info btn-sm"
+                                                           href="{{route('homepage.edit',$homes['id'])}}">
+                                                            <i class="fas fa-pencil-alt">
+                                                            </i>
+                                                            Edit
+                                                        </a>
+                                                    @endif
+                                                    @if(auth()->user()->can('delete'))
+                                                        <form action="{{route('homepage.destroy',$homes->id)}}"
+                                                              method="post"
+                                                              style="display:inline-block;">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            <button type="submit"
+                                                                    class="btn btn-danger btn-sm delete-btn">
+                                                                <i class="fas fa-trash">
+                                                                </i>
+                                                                Delete
+                                                            </button>
+                                                        </form>
+                                                    @endif
+                                                </td>
+                                            </tr>
 
-                                    @endforeach
-                                    </tbody>
-                                </table>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
                             </div>
                             <!-- /.card-body -->
                         </div>

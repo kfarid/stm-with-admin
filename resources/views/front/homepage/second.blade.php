@@ -11,14 +11,6 @@
             <h1>{{strtoupper($home->{'title_'.app()->getLocale()})}}</h1>
             @endforeach
         </div>
-        <div class="extra-items">
-            <div class="box-item">
-                <figure><img src="{{asset('DogusGrubu_files/202011181132140_yatirimci_new_2.jpg')}}" alt=""></figure>
-            </div>
-            <div class="box-item">
-                <figure><img src="{{asset('DogusGrubu_files/202011181132140_yatirimci_new_2.jpg')}}" alt=""></figure>
-            </div>
-        </div>
          <div class="boxMenuWrapper clearfix boxWrapper">
              @foreach($seconds as $second)
                 <div class="box-item">

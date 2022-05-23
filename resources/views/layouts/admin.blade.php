@@ -34,12 +34,12 @@
 
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed ">
+<body class="sidebar-mini layout-fixed control-sidebar-slide-open" data-panel-auto-height-mode="height" style="height: auto;">
 <div class="wrapper">
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation" src="{{asset('dist/img/833.gif')}}" alt="AdminLTELogo" >
+        <img class="animation" src="{{asset('dist/img/833.gif')}}" alt="AdminLTELogo">
     </div>
 
     <!-- Navbar -->
@@ -55,8 +55,6 @@
         <strong>Copyright &copy; 2022.</strong> All rights reserved.
     </footer>
 
-    <!-- Control Sidebar -->
-    <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 

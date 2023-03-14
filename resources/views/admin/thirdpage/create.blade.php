@@ -60,6 +60,14 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    {{--<div class="form-group col-sm-6">
+                                        <label>Select Second Page</label>
+                                        <select name="second_slug" class="form-control">
+                                            @foreach($homePage as $home)
+                                                <option value="{{$home['slug_en']}}">{{$home['title_en']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>--}}
                                     <div class="form-group col-sm-12">
                                         <label>Text EN</label>
                                         <textarea name="textarea_en" class="editor"> </textarea>
@@ -81,7 +89,7 @@
                                         <label for="feature_image">Select Image</label>
                                         <img src="" alt="" class="img-uploaded" style="display: block; width: 300px" >
                                         <input type="text" name="img" class="form-control" id="feature_image"
-                                               name="feature_image" value="" readonly required>
+                                               name="feature_image" value="" readonly>
                                         <button href="" class="popup_selector btn btn-primary m-2"
                                                 data-inputid="feature_image" >Выбрать изображение
                                         </button>

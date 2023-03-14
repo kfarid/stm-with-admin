@@ -1,14 +1,14 @@
 <nav class="sidenav nav-menu">
     <ul id="zone_8">
+        <li id="article_2">
+            <a title="&#304;LET&#304;&#350;&#304;M"
+               href="{{route('contact')}}"><span>{{__('CONTACT US')}}</span></a>
+        </li>
         @foreach($links as $link)
         <li id="article_2">
             <a title="{{$link->{'title_'.app()->getLocale()} }}" href="{{route('second',$link->id)}}"><span>{{Str::upper($link->{'title_'.app()->getLocale()}) }}</span></a>
         </li>
         @endforeach
-        <li id="article_2">
-            <a title="&#304;LET&#304;&#350;&#304;M"
-               href="{{route('contact')}}"><span>{{__('CONTACT US')}}</span></a>
-        </li>
     </ul>
     <!-- Processed in 16,0012 ms menu_temp:  -->
 </nav>

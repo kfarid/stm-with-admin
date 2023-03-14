@@ -43,12 +43,13 @@ class FrontController extends Controller
      */
     public function third(String $slug_en)
     {
+        $homes = HomePage::where('slug_en',$slug_en)->get();
         $seconds = SecondPage::where('slug_en',$slug_en)->get();
         $googles = Google::all();
         $thirds = ThirdPage::where('second_slug', $slug_en)->get();
         $panels = Panel::orderBy('created_at',"DESC")->get();
         $cards = Card::orderBy('created_at',"DESC")->get();
         $settings = BasicSetting::all();
-        return view('front.homepage.third', compact('seconds','thirds','panels','cards','googles','settings'));
+        return view('front.homepage.third', compact('seconds','homes','thirds','panels','cards','googles','settings'));
     }
 }

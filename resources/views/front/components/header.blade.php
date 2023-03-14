@@ -1,11 +1,14 @@
+<?php
+use App\Http\Middleware\LocaleMiddleware;
+?>
 <header>
     @foreach($settings as $setting)
         @if($setting->logotext != null)
-    <a href="/" class="logo">
+    <a href="/{{APP::getLocale()}}" class="logo">
         <h1>{{$setting->logotext}}</h1>
     </a>
         @else
-    <a href="/" class="logo1">
+    <a href="/{{APP::getLocale()}}" class="logo1">
         <div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
             <img src="{{$setting->logo}}" class="logo1">
         </div>
@@ -13,10 +16,11 @@
         @endif
     @endforeach
     <ul>
-        @php $locale = session()->get('locale'); @endphp
+        @php  $locale = APP::getLocale(); @endphp
         <li class="lang dropdown">
-            <a id="dropdownMenuButton1" class="dropdown-toggle" href="#" role="button"
-               data-toggle="dropdown" type="button">
+            <a id="dropdownMenuButton1" class="dropdown-toggle" role="button"
+               data-toggle="dropdown" type="button" href="#">
+                 {{--href="<?= route('setlocale', ['lang' => 'az']) ?>">AZ</a>--}}
                 @switch($locale)
                     @case('en')
                     EN
@@ -33,12 +37,16 @@
                     @default
                     AZ
                 @endswitch
-            </a>
+        </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="lang/az">AZ</a>
+                <a class="dropdown-item" href="<?= route('setlocale', ['lang' => 'az']) ?>">AZ</a>
+                <a class="dropdown-item" href="<?= route('setlocale', ['lang' => 'en']) ?>">EN</a>
+                <a class="dropdown-item" href="<?= route('setlocale', ['lang' => 'ru']) ?>">RU</a>
+                <a class="dropdown-item" href="<?= route('setlocale', ['lang' => 'tr']) ?>">TR</a>
+                {{--<a class="dropdown-item" href="lang/az">AZ</a>
                 <a class="dropdown-item" href="lang/en">EN</a>
                 <a class="dropdown-item" href="lang/ru">RU</a>
-                <a class="dropdown-item" href="lang/tr">TR</a>
+                <a class="dropdown-item" href="lang/tr">TR</a>--}}
             </div>
         </li>
         {{--<li>

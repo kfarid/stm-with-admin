@@ -16,8 +16,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        /*$sliders = Slider::orderBY('created_at','DESC')->get();
-        return  view('admin.slider.index',compact('sliders'));*/
+        $sliders = Slider::orderBY('created_at','DESC')->get();
+        return  view('admin.slider.index',compact('sliders'));
     }
 
     /**
@@ -27,8 +27,8 @@ class SliderController extends Controller
      */
     public function create()
     {
-        /*$thirds = ThirdPage::all();
-        return view('admin.slider.create',compact('thirds'));*/
+        $thirds = ThirdPage::all();
+        return view('admin.slider.create',compact('thirds'));
     }
 
     /**
@@ -39,11 +39,11 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-       /* $slider = new  Slider();
+        $slider = new  Slider();
         $slider->page_id = $request->page_id;
         $slider->third_id = $request->third_id;
         $slider->save();
-        return redirect()->route('slider.index')->withSuccess('Perfectly added');*/
+        return redirect()->route('slider.index')->withSuccess('Perfectly added');
     }
 
     /**
@@ -65,8 +65,8 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-      /*  $thirds =ThirdPage::all();
-        return view('admin.slider.edit',compact('slider','thirds'));*/
+        $thirds =ThirdPage::all();
+        return view('admin.slider.edit',compact('slider','thirds'));
     }
 
     /**
@@ -78,10 +78,10 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        /*$slider->page_id = $request->page_id;
+        $slider->page_id = $request->page_id;
         $slider->third_id = $request->third_id;
         $slider->update();
-        return redirect()->route('slider.index')->withSuccess('Perfectly update');*/
+        return redirect()->route('slider.index')->withSuccess('Perfectly update');
     }
 
     /**
@@ -92,7 +92,7 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-       /* $slider->delete();
-        return redirect()->route('slider.index')->withSuccess('Perfectly deleted');*/
+        $slider->delete();
+        return redirect()->route('slider.index')->withSuccess('Perfectly deleted');
     }
 }

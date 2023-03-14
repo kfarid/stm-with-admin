@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BasicSetting;
 use App\Models\Contact;
 use App\Models\Google;
 use Illuminate\Contracts\Mail\Mailable;
@@ -11,8 +12,9 @@ class ContactController extends Controller
 {
     public function contact()
     {
+        $settings = BasicSetting::all();
         $googles = Google::all();
-        return view('front.homepage.contact',compact('googles'))  ;
+        return view('front.homepage.contact',compact('googles','settings'))  ;
     }
 
 

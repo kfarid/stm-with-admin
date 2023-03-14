@@ -752,6 +752,8 @@ header ul .search:after {
     transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+
+
 .mobile-tab {
     position: relative;
     width: 100%;
@@ -2455,9 +2457,9 @@ body,
     overflow: hidden;
 }
 
-.st-content .boxMenuWrapper .box-item.w2 {
+/*.st-content .boxMenuWrapper .box-item.w2 {
     width: 50%;
-}
+}*/
 
 .st-content .boxMenuWrapper .box-item.w2.sub-headline {
     background: #9f9f9f;
@@ -2838,15 +2840,15 @@ body,
    IMAGE LIST
    ========================================================================== */
 .image-list {
-    margin-top: 1.5em;
-    border-left: 1px solid #cbcbcb;
-    border-top: 1px solid #cbcbcb;
+    /*margin-top: 1.5em;*/
+    /*border-left: 1px solid #cbcbcb;
+    border-top: 1px solid #cbcbcb;*/
 }
 
 .image-list .colon-2 {
     width: 50%;
     float: left;
-    border-bottom: 1px solid #cbcbcb;
+    /*border-bottom: 1px solid #cbcbcb;*/
 }
 
 .image-list .colon-3 {
@@ -2906,7 +2908,7 @@ body,
     padding-bottom: 73%;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid #cbcbcb;
+    /*border-right: 1px solid #cbcbcb;*/
 }
 
 .image-list .dl .withinfo .col-inner {
@@ -5605,4 +5607,59 @@ body.dergiWrap article.sidecontent-inner {
     width: 100%;
     padding-right: 0px;
     padding-left: 0px;
+}
+
+@media only screen and (max-width: 767px) {
+    #splash {
+        width: 100% !important;
+        height: 100% !important;
+        left: 80% !important;
+    }
+
+    #splash video {
+        width: 100%;
+    }
+}
+
+#overlay {
+    background-color: #000;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+#splash {
+    width: 730px;
+    height: 440px;
+    position: absolute;
+    left: 45%;
+    top: 65%;
+    margin: -300px 0 0 -300px;
+    z-index: 99999;
+    display: block;
+}
+
+#splash #close {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    text-indent: -99999px;
+}
+
+h1 {
+    /* color: #1c1c1c;*/
+    text-decoration: none !important;
+}
+
+.logo {
+    text-decoration: none !important;
 }

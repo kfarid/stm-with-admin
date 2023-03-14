@@ -53,56 +53,53 @@
                         <br>
                     @endif
                 @endforeach
-
-                <div class="image-list clearfix withinfo">
                     @foreach($cards as $card)
                         @if($third->id == $card->third_id)
-                            <div class="colon-2">
-                                <div class="col-inner">
-                                    <figure>
-                                        <img alt="" src="{{$card->img}}" style="max-width: 200px"></figure>
-                                    <div class="info">
-                                        <div class="info-in">
-                                            <p class="title">{{$card->title}}</p>
-                                            <ul class="contact-info">
-                                                <li class="location">
-                                                    <i class="fa-solid fa-location-dot"></i>
-                                                    {{$card->location}}
-                                                </li>
-                                                <li class="email">
-                                                    <a href="mailto:{{$card->email}}">
-                                                        <i class="fa-solid fa-envelope"></i>
-                                                        {{$card->email}}
-                                                    </a>
-                                                </li>
-                                                <li class="phone">
-                                                    <a href="tel:+{{$card->phone}}">
-                                                        <i class="fa-solid fa-phone"></i>
-                                                        +{{$card->phone}}
-                                                    </a>
-                                                </li>
-                                                <li class="fax">
-                                                    <a href="tel:+{{$card->fax}}">
-                                                        <i class="fa-solid fa-fax"></i>
-                                                        +{{$card->fax}}
-                                                    </a>
-                                                </li>
-                                                <li class="mail">
-                                                    <a href="{{$card->link}}" target="_blank">
-                                                        <i class="fa-solid fa-globe"></i>
-                                                        <strong>{{$card->link}}</strong>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                        <div class="image-list clearfix withinfo">
+                                <div class="colon-2">
+                                    <div class="col-inner">
+                                        <figure>
+                                            <img alt="" src="{{$card->img}}" ></figure>
+                                        <div class="info">
+                                            <div class="info-in">
+                                                <p class="title">{{$card->title}}</p>
+                                                <ul class="contact-info">
+                                                    <li class="location">
+                                                        <i class="fa-solid fa-location-dot"></i>
+                                                        {{$card->location}}
+                                                    </li>
+                                                    <li class="email">
+                                                        <a href="mailto:{{$card->email}}">
+                                                            <i class="fa-solid fa-envelope"></i>
+                                                            {{$card->email}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="phone">
+                                                        <a href="tel:+{{$card->phone}}">
+                                                            <i class="fa-solid fa-phone"></i>
+                                                            +{{$card->phone}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="fax">
+                                                        <a href="tel:+{{$card->fax}}">
+                                                            <i class="fa-solid fa-fax"></i>
+                                                            +{{$card->fax}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="mail">
+                                                        <a href="{{$card->link}}" target="_blank">
+                                                            <i class="fa-solid fa-globe"></i>
+                                                            <strong>{{$card->link}}</strong>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        @else
-                            <br>
-                        @endif
-                    @endforeach
-                </div>
+                            @endif
+                        @endforeach
+                    </div>
 
             @endforeach
             <br>

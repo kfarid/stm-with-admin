@@ -43,6 +43,11 @@ class ThirdPage extends Model
         return $this->belongsTo('App\Models\SecondPage', 'second_slug');
     }
 
+    public function homepage()
+    {
+        return $this->belongsTo('App\Models\HomePage', 'home_slug');
+    }
+
     /*public function panel()
     {
         return $this->belongsTo('App\Models\Panel', 'panel_id');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Card;
+use App\Models\HomePage;
 use App\Models\Panel;
 use App\Models\SecondPage;
 use App\Models\Slider;
@@ -32,11 +33,12 @@ class ThirdController extends Controller
      */
     public function create()
     {
+        /*$homePage = HomePage::orderBy('created_at', 'desc')->get();*/
         $secondPage = SecondPage::orderBy('created_at', 'desc')->get();
         $cards = Card::orderBy('created_at', 'desc')->get();
         $third = ThirdPage::orderBy('created_at', 'desc')->get();
         $panels = Panel::all();
-        return view('admin.thirdpage.create', compact('secondPage', 'panels', 'cards', 'third', 'panels'));
+        return view('admin.thirdpage.create', compact('secondPage','homePage', 'panels', 'cards', 'third', 'panels'));
     }
 
     /**
@@ -75,11 +77,13 @@ class ThirdController extends Controller
      */
     public function edit($id)
     {
+        $homes = HomePage::orderBy('created_at', 'desc')->get();
         $seconds = SecondPage::orderBy('created_at', 'desc')->get();
         $third = ThirdPage::find($id);
         $cards = Card::orderBy('created_at', 'desc')->get();
         $panels = Panel::all();
         return view('admin.thirdpage.edit', [
+            /*'homes' => $homes,*/
             'third' => $third,
             'seconds' => $seconds,
             'panels' => $panels,
@@ -141,5 +145,6 @@ class ThirdController extends Controller
         $thirdPage->textarea_tr = $request->textarea_tr;
         $thirdPage->img = $request->img;
         $thirdPage->second_slug = $request->second_slug;
+        /*$thirdPage->home_slug = $request->home_slug;*/
     }
 }

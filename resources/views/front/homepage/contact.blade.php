@@ -17,7 +17,7 @@
                 </div>
                 <div class="sideContent" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
                     <article class="sidecontent-inner" style="min-height: 600px;">
-                        <h1>CONTACT US</h1>
+                        <h1>{{__('CONTACT US')}}</h1>
                         <div class="subtitle">
                             <ul class="contact-info">
                                 <li class="address">AZERBAIJAN/ BAKU</li>

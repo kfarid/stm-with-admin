@@ -46,7 +46,7 @@
     <link href={{asset('Content/assets/css/main.css')}} rel="stylesheet"/>
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <style>
+    {{--<style>
         @media only screen and (max-width: 767px) {
             #splash {
                 width: 100% !important;
@@ -101,7 +101,7 @@
         .logo {
             text-decoration: none !important;
         }
-    </style>
+    </style>--}}
     <noscript>
         <img height="1" width="1" style="display:none"
              src="https://www.facebook.com/tr?id=1213343435445466&ev=PageView&noscript=1"/>

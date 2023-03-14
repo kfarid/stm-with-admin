@@ -65,6 +65,19 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    {{--<div class="form-group col-sm-6">
+                                        <label>Select Second Page</label>
+                                        <select name="second_slug" class="form-control">
+                                            @foreach($homes as $page)
+                                                <option
+                                                    value="{{$page['slug_en']}}"
+                                                    @if($page['slug_en'] == $third['home_slug'])selected
+                                                    @endif>
+                                                    {{$page['title_en']}}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>--}}
                                     <div class="form-group col-sm-12">
                                         <label>Text EN</label>
                                         <textarea name="textarea_en" class="editor">{{$third->textarea_en}}</textarea>

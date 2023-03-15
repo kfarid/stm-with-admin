@@ -115,6 +115,7 @@
     </script>--}}
 </head>
 <body >
+<div class="elfsight-app-9356ac94-a3f3-4c1f-bf15-4711a04b5077"></div>
 @foreach($googles as $google)
     {!! $google->tag_script_body!!}
 @endforeach
@@ -160,6 +161,7 @@
 <div class="tablet-indicator"></div>
 <div class="mobile-indicator"></div>
 
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <script>
     $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function () {
         var next = $(this).next();

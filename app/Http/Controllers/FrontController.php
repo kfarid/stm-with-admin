@@ -8,6 +8,7 @@ use App\Models\Google;
 use App\Models\HomePage;
 use App\Models\Panel;
 use App\Models\SecondPage;
+use App\Models\Slider;
 use App\Models\SocialMedia;
 use App\Models\ThirdPage;
 use Illuminate\Http\Request;

@@ -38,7 +38,7 @@ class ThirdController extends Controller
         $cards = Card::orderBy('created_at', 'desc')->get();
         $third = ThirdPage::orderBy('created_at', 'desc')->get();
         $panels = Panel::all();
-        return view('admin.thirdpage.create', compact('secondPage','homePage', 'panels', 'cards', 'third', 'panels'));
+        return view('admin.thirdpage.create', compact('secondPage', 'panels', 'cards', 'third', 'panels'));
     }
 
     /**
@@ -77,13 +77,13 @@ class ThirdController extends Controller
      */
     public function edit($id)
     {
-        $homes = HomePage::orderBy('created_at', 'desc')->get();
+        /*$homes = HomePage::orderBy('created_at', 'desc')->get();*/
         $seconds = SecondPage::orderBy('created_at', 'desc')->get();
         $third = ThirdPage::find($id);
         $cards = Card::orderBy('created_at', 'desc')->get();
         $panels = Panel::all();
         return view('admin.thirdpage.edit', [
-            /*'homes' => $homes,*/
+
             'third' => $third,
             'seconds' => $seconds,
             'panels' => $panels,

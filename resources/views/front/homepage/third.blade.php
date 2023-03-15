@@ -1,5 +1,7 @@
 @extends('layouts.front  ')
-@section('title','Third')
+@foreach($seconds as $second)
+    @section('title',$second->{'title_'.app()->getLocale()})
+@endforeach
 @section('content')
     <x-backbutton></x-backbutton>
     <div class="fixedColumn hover" style="width: 38%;">
@@ -29,7 +31,7 @@
                 </li>
             </ul>
             @foreach($thirds as $third)
-                <h1>{{$third->{'title_'.app()->getLocale()} }}</h1>
+                <h1 class="title-text">{{$third->{'title_'.app()->getLocale()} }}</h1>
                 <div>{!! $third->{'textarea_'.app()->getLocale()}!!}
                 </div>
 
@@ -55,8 +57,9 @@
                 @endforeach
                     @foreach($cards as $card)
                         @if($third->id == $card->third_id)
+                            @if($card->title !== null)
                         <div class="image-list clearfix withinfo">
-                                <div class="colon-2">
+                                <div class="colon-2 card">
                                     <div class="col-inner">
                                         <figure>
                                             <img alt="" src="{{$card->img}}" ></figure>
@@ -97,6 +100,16 @@
                                         </div>
                                     </div>
                                 </div>
+                            @else
+                                <div class="image-list clearfix withinfo">
+                                    <div class="colon-2 card">
+                                        <div class="col-inner">
+                                            <figure>
+                                                <img alt="" src="{{$card->img}}" ></figure>
+                                        </div>
+                                    </div>
+                            @endif
+
                             @endif
                         @endforeach
                     </div>

@@ -5,16 +5,6 @@ use App\Http\Middleware\Localization;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::redirect('/login', 'login');
 
@@ -39,11 +29,6 @@ Route::prefix('admin_panel')->group( function () {
     Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class);
     Route::get('adminsearch', [\App\Http\Controllers\Admin\SearchController::class,'search'])->name('adminsearch');
 });
-
-/*
-Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'contacts'])->name('contacts');
-Route::post('/contacts', [App\Http\Controllers\ContactController::class, 'storeContact'])->name('contacts.store');
-*/
 
 
 /*Route::controller(['Localization'])->prefix('/')->group(function (){*/

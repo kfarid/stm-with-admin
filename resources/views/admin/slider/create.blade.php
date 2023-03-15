@@ -32,9 +32,31 @@
                             <form action="{{route('slider.store')}}" method="POST">
                                 @csrf
                                 <div class="form-group col-sm-12">
-                                    <label for="exampleInputEmail1">Title</label>
-                                    <input type="text" name="title" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Enter title" required>
+                                    <label for="exampleInputEmail1">Name EN</label>
+                                    <input type="text" name="name_en" class="form-control" id="exampleInputEmail1"
+                                           placeholder="Enter title en name" required>
+                                </div><div class="form-group col-sm-12">
+                                    <label for="exampleInputEmail1">Name AZ</label>
+                                    <input type="text" name="name_az" class="form-control" id="exampleInputEmail1"
+                                           placeholder="Enter title en name" required>
+                                </div><div class="form-group col-sm-12">
+                                    <label for="exampleInputEmail1">Name RU</label>
+                                    <input type="text" name="name_ru" class="form-control" id="exampleInputEmail1"
+                                           placeholder="Enter title en name" required>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label for="exampleInputEmail1">Name TR</label>
+                                    <input type="text" name="name_tr" class="form-control" id="exampleInputEmail1"
+                                           placeholder="Enter title en name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="feature_image">Select Image</label>
+                                    <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
+                                    <input type="text" name="img" class="form-control" id="feature_image"
+                                           name="feature_image" value="" readonly>
+                                    <button href="" class="popup_selector btn btn-primary m-2"
+                                            data-inputid="feature_image">Выбрать изображение
+                                    </button>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group col-sm-6">

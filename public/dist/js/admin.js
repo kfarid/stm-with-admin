@@ -21,11 +21,15 @@ $(document).ready(function () {
 
 tinymce.init({
     selector: '.editor',
-    plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-    toolbar_mode: 'floating',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     relative_urls: false,
     file_picker_callback: elFinderBrowser
 });
+
+
+
+
 
 
 

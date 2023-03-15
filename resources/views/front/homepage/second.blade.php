@@ -1,5 +1,7 @@
 @extends('layouts.front')
-@section('title','Second')
+@foreach($homes as $home)
+    @section('title',$home->{'title_'.app()->getLocale()})
+@endforeach
 @section('content')
     <article class="sidecontent-inner">
         <div class="topSpace">

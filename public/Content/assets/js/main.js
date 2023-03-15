@@ -237,12 +237,12 @@ D = {
 		    $('*[data-target="#'+$(this).attr('id')+'"]').removeClass('active');
 		});
 	},
-/*	goBack:function(){
+	goBack:function(){
 		$('.back').on('click', function(){
 			parent.history.back();
         	return false;
 		});
-	},*/
+	},
 	mouseMove:function(){
 		var target = $('.mouse-frame');
 		var parentOffset;

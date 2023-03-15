@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title','Home')
+@section('title',__('HOME'))
 @section('content')
     <x-infograph></x-infograph>
     <article class="sidecontent-inner">

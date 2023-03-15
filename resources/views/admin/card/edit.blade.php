@@ -41,32 +41,32 @@
                                     <div class="form-group col-sm-12">
                                         <label for="exampleInputEmail1">Title</label>
                                         <input type="text" value="{{$card->title}}" name="title" class="form-control" id="exampleInputEmail1"
-                                               placeholder="Enter title" required>
+                                               placeholder="Enter title">
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="exampleInputEmail1">Location</label>
                                         <input type="text" value="{{$card->location}}" name="location" class="form-control" id="exampleInputEmail1"
-                                               placeholder="Enter location" required>
+                                               placeholder="Enter location">
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="exampleInputEmail1">Phone Number</label>
                                         <input type="tel" value="{{'+'.$card->phone}}" name="phone"  class="form-control" id="exampleInputEmail1"
-                                               placeholder="Enter phone number" required>
+                                               placeholder="Enter phone number">
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="exampleInputEmail1">Fax</label>
-                                        <input type="tel" name="fax" value="{{'+' . $card->fax}}" class="form-control" id="exampleInputEmail1"
-                                               placeholder="Enter fax number" required>
+                                        <input type="tel" name="tel" value="{{'+' . $card->fax}}" class="form-control" id="exampleInputEmail1"
+                                               placeholder="Enter fax number" >
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="exampleInputEmail1">Email</label>
                                         <input type="email" value="{{$card->email}}" name="email" class="form-control" id="exampleInputEmail1"
-                                               placeholder="Enter email" required>
+                                               placeholder="Enter email" >
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="exampleInputEmail1">Website Link</label>
                                         <input type="text" value="{{$card->link}}" name="link" value="https://" class="form-control" id="exampleInputEmail1"
-                                               placeholder="Enter website link" required>
+                                               placeholder="Enter website link">
                                     </div>
                                     <div class="form-group">
                                         <label for="feature_image">Select Image</label>

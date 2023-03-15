@@ -1,2 +1,2 @@
 <div class="mouse-frame"><span class="mouse"></span></div>
-<div class="back"><a href="{{URL::previous() }}"> </a></div>
+<div class="back"><a href="#"> </a></div>

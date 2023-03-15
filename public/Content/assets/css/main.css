@@ -2846,7 +2846,7 @@ body,
 }
 
 .image-list .colon-2 {
-    width: 50%;
+    width: 45%;
     float: left;
     /*border-bottom: 1px solid #cbcbcb;*/
 }
@@ -5662,4 +5662,13 @@ h1 {
 
 .logo {
     text-decoration: none !important;
+}
+
+.card {
+    margin: 1px;
+    border: 1px solid;
+}
+
+.title-text{
+    padding-top: 25px;
 }

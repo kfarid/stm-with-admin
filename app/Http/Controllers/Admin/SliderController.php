@@ -17,7 +17,8 @@ class SliderController extends Controller
     public function index()
     {
         $sliders = Slider::orderBY('created_at','DESC')->get();
-        return  view('admin.slider.index',compact('sliders'));
+        $thirds = ThirdPage::all();
+        return  view('admin.slider.index',compact('sliders','thirds'));
     }
 
     /**
@@ -34,14 +35,13 @@ class SliderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $slider = new  Slider();
-        $slider->page_id = $request->page_id;
-        $slider->third_id = $request->third_id;
+        $this->extracted($request, $slider, );
         $slider->save();
         return redirect()->route('slider.index')->withSuccess('Perfectly added');
     }
@@ -78,8 +78,7 @@ class SliderController extends Controller
      */
     public function update(Request $request, Slider $slider)
     {
-        $slider->page_id = $request->page_id;
-        $slider->third_id = $request->third_id;
+        $this->extracted($request, $slider);
         $slider->update();
         return redirect()->route('slider.index')->withSuccess('Perfectly update');
     }
@@ -95,4 +94,17 @@ class SliderController extends Controller
         $slider->delete();
         return redirect()->route('slider.index')->withSuccess('Perfectly deleted');
     }
+
+    public function extracted(Request $request, Slider $slider): void
+    {
+        $slider->title_az = $request->title_az;
+        $slider->title_en = $request->title_en;
+        $slider->title_tr = $request->title_tr;
+        $slider->title_ru = $request->title_ru;
+        $slider->page_id = $request->page_id;
+        $slider->img = $request->img;
+        $slider->third_id = $request->third_id;
+    }
 }
+
+

@@ -7,6 +7,21 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
+                    <div class="col-sm-12">
+                        <h1 class="m-0">All Post </h1>
+                    </div>
+                    @if(auth()->user()->can('add'))
+                        <div class="col-sm-12">
+                            <a class="btn btn-dark btn-sm" role="button"
+                               href="{{route('card.create')}}">
+                                <i class="fas fa-plus">
+                                </i>
+                                Add
+                            </a>
+                        </div>
+                    @endif
+                </div>
+                <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">Card</h1>
                     </div><!-- /.col -->

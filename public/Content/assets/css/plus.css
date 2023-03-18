@@ -1,0 +1,109 @@
+@import url(../font/stylesheet.css);
+.st-content .boxWrapper .box-item:hover svg {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+.st-content .boxWrapper .box-item .hover {
+    -webkit-transition: all .6s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all .6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.st-content .boxWrapper .box-item .hover {
+    background: rgba(8, 79, 156, 0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+}
+
+.st-content .boxWrapper .box-item .hover:before {
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    left: 0;
+    bottom: 0;
+    background: #5590cf;
+    content: "";
+    -webkit-transition: height .2s;
+    transition: height .2s
+}
+
+.st-content .boxWrapper .box-item:hover .hover:before {
+    height: 4px;
+}
+
+.st-content .boxWrapper .box-item:hover .hover {
+    opacity: 1;
+}
+
+.st-content .boxWrapper .box-item svg {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -60px;
+    margin-left: -60px;
+    width: 120px;
+    height: 120px;
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.st-content .boxWrapper .box-item:hover svg {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.st-content .boxWrapper .box-item:hover img {
+    -webkit-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+.st-content .boxWrapper .box-item.gif:hover img {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.st-content .boxWrapper .line-wrap {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -26px;
+    margin-top: -28px;
+}
+
+.st-content .boxWrapper .line-wrap .line1 {
+    width: 0;
+    height: 2px;
+    background: black;
+    content: "";
+    margin-top: 50%;
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+}
+
+.st-content .boxWrapper .line-wrap .line2 {
+    width: 2px;
+    height: 0;
+    background: black;
+    content: "";
+    margin-left: 50%;
+    margin-top: -50%;
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+}
+
+
+
+

@@ -6,7 +6,11 @@
     <article class="sidecontent-inner">
         <div class="topSpace">
             <ul class="breadcrumb">
-                <li><a href="/">{{__('HOME')}}</a></li>
+                <li id="26" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="28">
+                    <a href="{{route('index')}}" itemprop="url">
+                        <span itemprop="title">{{__('HOME')}}</span>
+                    </a>
+                </li>
                 @foreach($homes as $home)
                 <li>{{Str::upper($home->{'title_'.app()->getLocale()}) }}</li>
             </ul>

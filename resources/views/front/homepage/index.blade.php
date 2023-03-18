@@ -7,7 +7,8 @@
             @foreach($homes as $home)
                 <div class="box-item filter-7">
                 <a href="{{route('second',['slug_en' => $home->{'slug_en'}])}}">
-                    <figure><img src="{{$home->img}}" alt="">
+                    <figure>
+                        <img src="{{$home->img}}" alt="">
                     </figure>
                     <div class="hover">
                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -30,52 +31,6 @@
                 </a>
             </div>
             @endforeach
-            {{--<div class="box-item">
-                <a href="" data-video="">
-                    <figure><img src="{{asset('DogusGrubu_files/202011181172236_900x620_kss.jpg')}}" alt=""></figure>
-                    <div class="hover">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             version="1.1"
-                             preserveAspectRatio="none">
-                            <circle cx="148" cy="53" r="50" class="arc" fill="none"
-                                    stroke="#fff" stroke-width="2" stroke-dasharray="0,20000"
-                                    transform="rotate(-90,100,100)"/>
-                        </svg>
-                        <div class="line-wrap">
-                            <div class="line1"></div>
-                            <div class="line2"></div>
-                        </div>
-                    </div>
-                    <div class="item-detail">
-                        <div class="group">DOĞUŞ/GRUBU</div>
-                        <div class="title">Kurumsal Sorumluluk</div>
-                    </div>
-                </a>
-            </div>
-            <div class="box-item">
-                <a href="">
-                    <figure><img src="{{asset('DogusGrubu_files/202012812519115_1088_1_1300x970_basin_odasi.jpg')}}"
-                                 alt=""></figure>
-
-                    <div class="hover">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             version="1.1"
-                             preserveAspectRatio="none">
-                            <circle cx="148" cy="53" r="50" class="arc" fill="none" stroke="#fff"
-                                    stroke-width="2" stroke-dasharray="0,20000"
-                                    transform="rotate(-90,100,100)"/>
-                        </svg>
-                        <div class="line-wrap">
-                            <div class="line1"></div>
-                            <div class="line2"></div>
-                        </div>
-                    </div>
-                    <div class="item-detail">
-                        <div class="group">{{__('STM GRUBU')}}</div>
-                        <div class="title">{{__('BASIN ODASI')}}</div>
-                    </div>
-                </a>
-            </div>--}}
         </div>
     </article>
 

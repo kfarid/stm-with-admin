@@ -604,21 +604,21 @@ D = {
 			},10)
 		});
 	},
-	drawCircle: function(el) {
-		var circle = el.find(".arc");
-	    var interval = 1;
-	    var angle = 0;
-	    var angle_increment = 4;
+    drawCircle: function(el) {
+        var circle = el.find(".arc");
+        var interval = 1;
+        var angle = 0;
+        var angle_increment = 4;
 
-	    window.timer = window.setInterval(function () {
-	        circle.attr("stroke-dasharray", angle + ", 20000");
+        window.timer = window.setInterval(function () {
+            circle.attr("stroke-dasharray", angle + ", 20000");
 
-	        if (angle >= 360) {
-	            window.clearInterval(window.timer);
-	        }
-	        angle += angle_increment;
-	    }.bind(this), interval);
-    	TweenMax.set(el.find(".line1"), {width:'0'});
+            if (angle >= 360) {
+                window.clearInterval(window.timer);
+            }
+            angle += angle_increment;
+        }.bind(this), interval);
+        TweenMax.set(el.find(".line1"), {width:'0'});
         TweenMax.set(el.find(".line2"), {height:'0'});
         TweenMax.to(el.find(".line1"), .6, {width:'100%', delay:0.2, ease:Quint.easeOut});
         TweenMax.to(el.find(".line2"), .6, {height:'100%', delay:0.4, ease:Quint.easeOut});
@@ -628,8 +628,8 @@ D = {
     	window.clearInterval(window.timer);
     	clearTimeout(circleTimeout);
     	circle.attr("stroke-dasharray", ', 20000')
-    },
-    FormElements: {
+    }
+  /*  FormElements: {
     	messageTr :['Bu alan zorunludur.'],
 		messageEn :['This field is required.'],
 		messageMailTr :['Lütfen geçerli bir email adresi giriniz.'],
@@ -718,7 +718,7 @@ D = {
 			//	}
 			//});
    //     },
-        radio: function () {
+/!*        radio: function () {
             $('input:radio').change(function () {
                 var current = $(this);
                 if (current.is(':checked')) {
@@ -827,10 +827,10 @@ D = {
 					$("<img src='/Custom/ShowCaptchaImage' id='imgCaptcha1'>").insertBefore("#refreshCaptcha");
 				}
 			});
-		}
-	},
+		}*!/
+	},*/
 
-    getTags:function(key, pageSize, currentPage){
+/*    getTags:function(key, pageSize, currentPage){
     	var tagPage = true;
     	if( $('body').hasClass('static') || $('body').attr('id') == 'indexPage' ) tagPage = false;
 
@@ -948,9 +948,8 @@ D = {
 			$('.sitemapmenuwrap').append(treeDom);
 			$('.sitemapmenu').prepend( langTr ? '<div><a href="ana-sayfa">ANASAYFA</a></div>' : '<div><a href="/en/homepage">HOMEPAGE</a></div>');
 		}
-    }
+    }*/
 }
-
 $(document).ready(function () {
 	D.commonInit();
 
@@ -1012,3 +1011,6 @@ $(document).ready(function () {
 	//BizD Dergi Slider
 
 });
+
+
+

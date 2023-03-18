@@ -57,7 +57,7 @@
                 @endforeach
                     @foreach($cards as $card)
                         @if($third->id == $card->third_id)
-                            @if($card->title !== null)
+                            @if($card->email !== null || $card->location !== null)
                         <div class="image-list clearfix withinfo">
                                 <div class="colon-2 card">
                                     <div class="col-inner">
@@ -105,7 +105,8 @@
                                     <div class="colon-2 card">
                                         <div class="col-inner">
                                             <figure>
-                                                <img alt="" src="{{$card->img}}" ></figure>
+                                                <img alt="" src="{{$card->img}}" >
+                                            </figure>
                                         </div>
                                     </div>
                             @endif

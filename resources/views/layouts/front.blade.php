@@ -4,11 +4,11 @@
 
     <title>@yield('title')</title>
     @foreach($settings as $setting)
-    <meta name="DESCRIPTION"
-          content="{{$setting->description}}"/>
-    <meta name="KEYWORDS"
-          content="{{$setting->keywords}}"/>
-    <link rel="icon" type="image/x-icon" href="{{$setting->favicon}}">
+        <meta name="DESCRIPTION"
+              content="{{$setting->description}}"/>
+        <meta name="KEYWORDS"
+              content="{{$setting->keywords}}"/>
+        <link rel="icon" type="image/x-icon" href="{{$setting->favicon}}">
     @endforeach
     <meta charset="utf-8"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -20,7 +20,7 @@
     {!! $google->tag_script_head!!}
 @endforeach
 
-    <!-- Basic Page Needs -->
+<!-- Basic Page Needs -->
     <meta http-equiv="X-UA-Compatible " content="IE=11">
     <meta name="viewport " content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,9 +44,10 @@
     <link href={{asset('Content/assets/css/slick.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/slick-theme.css')}} rel="stylesheet"/>
     <link href={{asset('Content/assets/css/main.css')}} rel="stylesheet"/>
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">--}}
+{{--    <link href={{asset('Content/assets/css/splide.min.css')}} rel="stylesheet"/>--}}
+    <link href={{asset('Content/assets/css/plus.css')}} rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    {{--<style>
+    <style>
         @media only screen and (max-width: 767px) {
             #splash {
                 width: 100% !important;
@@ -94,33 +95,25 @@
         }
 
         h1 {
-           /* color: #1c1c1c;*/
+            /* color: #1c1c1c;*/
             text-decoration: none !important;
         }
 
         .logo {
             text-decoration: none !important;
         }
-    </style>--}}
+    </style>
     <noscript>
         <img height="1" width="1" style="display:none"
              src="https://www.facebook.com/tr?id=1213343435445466&ev=PageView&noscript=1"/>
     </noscript>
-    {{--<script>
-        function change()
-        {
-            document.querySelector("link[href='/Content/assets/css/main.css']").href = "/Content/assets/css/main-dark.css";
-            document.querySelector("link[href='/Content/assets/css/plugins_min.css']").href = "/Content/assets/css/plugins_min-dark.css";
-        }
-    </script>--}}
 </head>
-<body >
+<body>
 @foreach($googles as $google)
     {!! $google->tag_script_body!!}
 @endforeach
 
 <div class="st-container" id="indexPage">
-
 
     <x-header></x-header>
 
@@ -161,6 +154,8 @@
 <div class="mobile-indicator"></div>
 
 
+
+
 <script>
     $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function () {
         var next = $(this).next();
@@ -179,22 +174,18 @@
     });
 </script>
 <script src={{asset('Content/assets/js/vendor/jquery-1.11.3.min.js')}}></script>
-<script src={{asset('Content/assets/js/vendor/TweenMax.min.js')}}></script>
 <script src={{asset('Content/assets/js/vendor/validate.min.js')}}></script>
 <script src={{asset('Content/assets/js/plugins.js')}}></script>
 <script src={{asset('Content/assets/js/jquery_cookie.js')}}></script>
 <script src={{asset('Content/assets/js/slick_min.js')}}></script>
 <script src={{asset('Content/assets/js/main.js')}}></script>
+<script src="{{asset('Content/assets/js/TweenMax.min.js')}}"></script>
+{{--<script src="{{asset('Content/assets/js/splide.min.js')}}"></script>
+<script src="{{asset('Content/assets/js/carousel.js')}}"></script>--}}
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 
 
-<noscript>
-    <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt=""
-             src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/855351163/?guid=ON&script=0"/>
-    </div>
-</noscript>
 <style>
     .st-content .boxWrapper .openVideo .line-wrap .line1 {
         width: 130px;

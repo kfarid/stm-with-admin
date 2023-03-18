@@ -36,14 +36,14 @@
         </div>
         <div class="col-1-2 right-side">
             <div class="inner">
-                <ul id="zone_10">
-                    {{--                    <li id="article_40">
+                {{--<ul id="zone_10">
+                    --}}{{--                    <li id="article_40">
                                             <a title="SİTE HARİTASI" href="tr/site-haritasi.html"><span>{{__('Site Haritası')}}</span></a>
-                                        </li>--}}
-                    {{--                    <li id="article_1308">
+                                        </li>--}}{{--
+                    --}}{{--                    <li id="article_1308">
                                             <a title="BİLGİ TOPLUMU HİZMETLERİ" href="#"
                                                target="_blank"><span>{{__('Bilgi Toplumu Hizmetleri')}}</span></a>
-                                        </li>--}}
+                                        </li>--}}{{--
                     <li id="article_38">
                         <a title="KULLANIM KOŞULLARI"
                            href="tr/kullanim-kosullari.html"><span>{{__('Kullanım Koşulları')}}</span></a>
@@ -57,7 +57,7 @@
                            href="tr/cerez-politikasi.html"><span>{{__('Çerez Politikası')}}</span></a>
                     </li>
 
-                </ul>
+                </ul>--}}
                 <!-- Processed in 12,0003 ms menu_temp:  -->
                 <p class="copyright">©2022 Sederek Ticaret Merkezi, {{__('All rights reserved.')}}</p>
             </div>

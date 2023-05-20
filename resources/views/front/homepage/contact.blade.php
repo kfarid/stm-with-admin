@@ -18,15 +18,16 @@
                 <div class="sideContent" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
                     <article class="sidecontent-inner" style="min-height: 600px;">
                         <h1>{{__('CONTACT US')}}</h1>
+                        @foreach($contacts as $c)
                         <div class="subtitle">
                             <ul class="contact-info">
-                                <li class="address">AZERBAIJAN/ BAKU</li>
-                                <li class="phone"><a href="tel:+12345678"> +12345678</a></li>
-                                <li class="fax"><a href="tel:+12345678">+12345678</a></li>
-
-                                <li class="mail"><a href="mailto:example@example.com">example@example.com</a>
+                                <li class="address">{{$c->address}}</li>
+                                <li class="phone"><a href="tel:+{{$c->num1}}"> +{{$c->num1}}</a></li>
+                                <li class="phone"><a href="tel:+{{$c->num2}}">+{{$c->num2}}</a></li>
+                                <li class="mail"><a href="mailto:{{$c->email}}">{{$c->email}}</a>
                                 </li>
                             </ul>
+                            @endforeach
                         </div>
                         @if(Session::has('success'))
                             <div class="alert alert-success">

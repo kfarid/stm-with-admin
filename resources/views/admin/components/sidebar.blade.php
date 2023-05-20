@@ -265,6 +265,31 @@
                         @endif
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>
+                            Contact US
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('contactus.index')}}" class="nav-link">
+                                <i class="fas fa-eye nav-icon"></i>
+                                <p>All Permissions</p>
+                            </a>
+                        </li>
+                        @if(auth()->user()->can('add'))
+                            <li class="nav-item">
+                                <a href="{{route('contactus.create')}}" class="nav-link">
+                                    <i class="fas fa-plus nav-icon"></i>
+                                    <p>Add Permissions</p>
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+                </li>
                 @endrole
                 {{--<li class="nav-item">
                     <a href="pages/gallery.html" class="nav-link">

@@ -27,6 +27,7 @@ Route::prefix('admin_panel')->group( function () {
     Route::resource('google', \App\Http\Controllers\Admin\GoogleController::class);
     Route::resource('setting', \App\Http\Controllers\Admin\BasicSettingController::class);
     Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class);
+    Route::resource('contactus', \App\Http\Controllers\ContactusController::class);
     Route::get('adminsearch', [\App\Http\Controllers\Admin\SearchController::class,'search'])->name('adminsearch');
 });
 
@@ -74,3 +75,11 @@ Route::get('setlocale/{lang}', function ($lang) {
 
 })->name('setlocale');
 
+Route::get('/clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+
+    return "Кэш очищен.";
+});

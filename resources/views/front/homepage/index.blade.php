@@ -1,7 +1,7 @@
 @extends('layouts.front')
 @section('title',__('HOME'))
 @section('content')
-    <x-infograph></x-infograph>
+    <x-infograph />
     <article class="sidecontent-inner">
         <div class="boxGridWrapper clearfix boxWrapper indexContent">
             @foreach($homes as $home)
